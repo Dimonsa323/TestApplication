@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol MainScreenPresenterProtocol {
-    
+    func showNextScreen(view: UIViewController)
 }
 
 class MainScreenPresenter {
@@ -23,8 +23,11 @@ class MainScreenPresenter {
 }
 
 extension MainScreenPresenter: MainScreenPresenterProtocol {
-    func showNextScreen() {
-        
+    func showNextScreen(view: UIViewController) {
+//        let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)
+//        let vc = RecepiesScreen(presenter: presenter)
+       // view.navigationController?.pushViewController(vc, animated: true)
+        navigator.showRecepiesVC(networking: networking, view: view, navigator: navigator)
     }
     
 }

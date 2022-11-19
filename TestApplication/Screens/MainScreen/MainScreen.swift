@@ -7,9 +7,18 @@
 
 import UIKit
 
+// MARK: - Class
+
 class MainScreen: UIViewController {
     
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var cookLabel: UILabel!
+    @IBOutlet weak var textLabel: UILabel!
+    
     private let presenter: MainScreenPresenterProtocol
+    
+    // MARK: - Init
     
     init(presenter: MainScreenPresenterProtocol) {
         self.presenter = presenter
@@ -20,6 +29,8 @@ class MainScreen: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -27,8 +38,20 @@ class MainScreen: UIViewController {
     
 }
 
+    // MARK: - Private Extension
+
 extension MainScreen {
     func setupUI() {
         
+    }
+}
+
+
+    // MARK: - IBAction
+
+extension MainScreen {
+    
+    @IBAction func enterButton() {
+        presenter.showNextScreen(view: self)
     }
 }
