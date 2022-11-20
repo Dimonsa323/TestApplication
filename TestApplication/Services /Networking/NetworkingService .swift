@@ -15,16 +15,8 @@ protocol NetwotkingServiceProtocol {
 class NetworkingService {
     func getModel(type: MenuActions, closure: @escaping ([Hits]) -> ()) {
         
-        let menuType: String
-        switch type {
-        case .meat:
-            menuType = "meat"
-        case .fish:
-            menuType = "fish"
-        case .chicken:
-            menuType = "chicken"
-        case .greens:
-            menuType = "greens"
+        guard let url = URL(string: "https://edamam-recipe-search.p.rapidapi.com/search?q=\(type.partURL)") else {
+            return
         }
         
         let headers = [
@@ -32,10 +24,7 @@ class NetworkingService {
             "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com"
         ]
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://edamam-recipe-search.p.rapidapi.com/search?q=\(menuType)")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        request.httpMethod = "GET"
+        var request = URLRequest(url: url)
         request.allHTTPHeaderFields = headers
         
         URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
@@ -64,8 +53,6 @@ class NetworkingService {
         }.resume()
     }
 }
-
-
 
 extension NetworkingService: NetwotkingServiceProtocol {
     

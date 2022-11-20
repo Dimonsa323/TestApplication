@@ -61,6 +61,10 @@ extension RecepiesScreen {
 }
 
 extension RecepiesScreen: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.showNextVC(indexPath: indexPath, view: self)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         presenter.menuActions.count
     }

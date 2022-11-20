@@ -10,6 +10,7 @@ import UIKit
 
 protocol RecepiesScreenPresenterProtocol {
     var menuActions: [MenuActions] { get }
+    func showNextVC(indexPath: IndexPath, view: UIViewController)
 }
 
 class RecepiesScreenPresenter {
@@ -25,5 +26,22 @@ class RecepiesScreenPresenter {
 }
 
 extension RecepiesScreenPresenter: RecepiesScreenPresenterProtocol {
+    func showNextVC(indexPath: IndexPath, view: UIViewController) {
+        let menuFoodAction = menuActions[indexPath.item]
+        
+//        let presenter
+//
+//        switch menuFoodAction {
+//
+//        case .meat:
+//            <#code#>
+//        case .chicken:
+//            <#code#>
+//        case .fish:
+//            <#code#>
+//        case .greens:
+//            <#code#>
+//        }
+    }
     
 }

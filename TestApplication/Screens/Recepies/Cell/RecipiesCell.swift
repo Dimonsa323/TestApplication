@@ -15,7 +15,6 @@ class RecipiesCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        backgroundColor = .brown
     }
 
     func configCell(with title: String, image: MenuActions) {
@@ -27,5 +26,6 @@ class RecipiesCell: UICollectionViewCell {
 extension RecipiesCell {
     func setupUI() {
         layer.cornerRadius = 8
+        backgroundColor = .brown
     }
 }

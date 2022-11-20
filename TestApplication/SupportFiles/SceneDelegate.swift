@@ -17,12 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigator = Navigator()
         let networking = NetworkingService()
-        let vc:FlowController = FlowController(navigator: navigator, networking: networking)
-//        let presenter = MainScreenPresenter(navigator: navigator, networking: networking)
-//        let vc = MainScreen(presenter: presenter)
+//        let vc:FlowController = FlowController(navigator: navigator, networking: networking)
+        let presenter = MainScreenPresenter(navigator: navigator, networking: networking)
+        let vc = MainScreen(presenter: presenter)
+        let navVC = UINavigationController(rootViewController: vc)
         
-        window?.rootViewController = vc
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = .dark
+        
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window?.windowScene = scene

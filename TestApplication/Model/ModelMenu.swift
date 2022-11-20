@@ -22,7 +22,7 @@ struct Recipe: Decodable {
     let source: String
     let url: String?
     let calories: Double
-    let totalWeigth: Double
+    let totalWeight: Double
     let ingredients: [Ingredients]
     let totalTime: Double
 }

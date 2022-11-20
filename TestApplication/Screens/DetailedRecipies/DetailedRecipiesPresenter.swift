@@ -9,14 +9,16 @@ import Foundation
 import UIKit
 
 protocol DetailedRecipiesPresenterProtocol {
-    var recipes: [Hits] { get }
+    var recipesFood: [Hits] { get }
+    func showDetailedVC(indexPath: IndexPath)
+    func getInfo()
 }
 
 class DetailedRecipiesPresenter {
     let navigator: NavigatorProtocol
     let networking: NetworkingService
     let type: MenuActions
-    var recipes: [Hits] = []
+    var recipesFood: [Hits] = []
     
     //MARK: - Init
     
@@ -28,5 +30,13 @@ class DetailedRecipiesPresenter {
 }
 
 extension DetailedRecipiesPresenter: DetailedRecipiesPresenterProtocol {
+    func showDetailedVC(indexPath: IndexPath) {
+        
+    }
     
+    func getInfo() {
+        networking.getModel(type: type) { hit in
+            self.recipesFood = hit
+        }
+    }
 }
