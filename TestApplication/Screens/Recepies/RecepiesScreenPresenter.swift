@@ -11,15 +11,17 @@ import UIKit
 protocol RecepiesScreenPresenterProtocol {
     var menuActions: [MenuActions] { get }
     func showNextVC(indexPath: IndexPath, view: UIViewController)
+    var hits: [Hits] { get }
 }
 
 class RecepiesScreenPresenter {
     
+    let hits: [Hits] = []
     let menuActions = MenuActions.allCases
     private let navigator: NavigatorProtocol
-    private let networking: NetwotkingServiceProtocol
+    private let networking: NetworkingServiceProtocol
     
-    init(navigator: NavigatorProtocol, networking: NetwotkingServiceProtocol) {
+    init(navigator: NavigatorProtocol, networking: NetworkingServiceProtocol) {
         self.navigator = navigator
         self.networking = networking
     }
@@ -28,20 +30,7 @@ class RecepiesScreenPresenter {
 extension RecepiesScreenPresenter: RecepiesScreenPresenterProtocol {
     func showNextVC(indexPath: IndexPath, view: UIViewController) {
         let menuFoodAction = menuActions[indexPath.item]
-        
-//        let presenter
-//
-//        switch menuFoodAction {
-//
-//        case .meat:
-//            <#code#>
-//        case .chicken:
-//            <#code#>
-//        case .fish:
-//            <#code#>
-//        case .greens:
-//            <#code#>
-//        }
+        navigator.showDetailedVC(view: view, type: menuFoodAction)
     }
-    
 }
+

@@ -9,7 +9,7 @@ import Foundation
 
 struct FoodMenu: Decodable {
     
-    let hit: [Hits]
+    let hits: [Hits]
 }
 
 struct Hits: Decodable {

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension Recipe {
+extension UIImageView {
     
     func loadAsyncImage(image: String, closure: @escaping (UIImage) -> ()) {
         DispatchQueue.global().async {

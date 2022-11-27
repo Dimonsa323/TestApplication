@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-protocol NetwotkingServiceProtocol {
+protocol NetworkingServiceProtocol {
     func getModel(type: MenuActions, closure: @escaping ([Hits]) -> ())
+    
 }
 
 class NetworkingService {
@@ -44,7 +45,7 @@ class NetworkingService {
                     let menu = try decoder.decode(FoodMenu.self, from: data)
                     print(menu)
                     DispatchQueue.main.async {
-                        closure(menu.hit)
+                        closure(menu.hits)
                     }
                 }
             } catch let error {
@@ -54,6 +55,6 @@ class NetworkingService {
     }
 }
 
-extension NetworkingService: NetwotkingServiceProtocol {
+extension NetworkingService: NetworkingServiceProtocol {
     
 }

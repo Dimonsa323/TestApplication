@@ -16,7 +16,7 @@
 		14D0EB2829253FCE00C8A435 /* MenuActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB2729253FCE00C8A435 /* MenuActions.swift */; };
 		14D0EB312925714200C8A435 /* RecipiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB2F2925714200C8A435 /* RecipiesCell.swift */; };
 		14D0EB322925714200C8A435 /* RecipiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0EB302925714200C8A435 /* RecipiesCell.xib */; };
-		14D0EB352928DE0800C8A435 /* ExtensionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB342928DE0800C8A435 /* ExtensionModel.swift */; };
+		14D0EB352928DE0800C8A435 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB342928DE0800C8A435 /* UIImageView.swift */; };
 		14D0EB392928E69700C8A435 /* DeteiledRecipiesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB372928E69700C8A435 /* DeteiledRecipiesScreen.swift */; };
 		14D0EB3A2928E69700C8A435 /* DeteiledRecipiesScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0EB382928E69700C8A435 /* DeteiledRecipiesScreen.xib */; };
 		14D0EB3C2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB3B2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift */; };
@@ -45,7 +45,7 @@
 		14D0EB2729253FCE00C8A435 /* MenuActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActions.swift; sourceTree = "<group>"; };
 		14D0EB2F2925714200C8A435 /* RecipiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipiesCell.swift; sourceTree = "<group>"; };
 		14D0EB302925714200C8A435 /* RecipiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipiesCell.xib; sourceTree = "<group>"; };
-		14D0EB342928DE0800C8A435 /* ExtensionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionModel.swift; sourceTree = "<group>"; };
+		14D0EB342928DE0800C8A435 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		14D0EB372928E69700C8A435 /* DeteiledRecipiesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteiledRecipiesScreen.swift; sourceTree = "<group>"; };
 		14D0EB382928E69700C8A435 /* DeteiledRecipiesScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeteiledRecipiesScreen.xib; sourceTree = "<group>"; };
 		14D0EB3B2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipiesPresenter.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				14D0EB1F2921307600C8A435 /* UIViewController.swift */,
-				14D0EB342928DE0800C8A435 /* ExtensionModel.swift */,
+				14D0EB342928DE0800C8A435 /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,6 +141,13 @@
 				14D0EB3F2928E8C300C8A435 /* DeteiledRecipiesCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		14D0EB452933D9DC00C8A435 /* IngredientsVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IngredientsVC;
 			sourceTree = "<group>";
 		};
 		14DDF8BB291BFA5C002F7A87 = {
@@ -212,6 +219,7 @@
 		14DDF8E2291C0715002F7A87 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				14D0EB452933D9DC00C8A435 /* IngredientsVC */,
 				14D0EB362928E5ED00C8A435 /* DetailedRecipies */,
 				14D0EB14291EF5EF00C8A435 /* Recepies */,
 				14DDF8F0291C1CF2002F7A87 /* MainScreen */,
@@ -334,7 +342,7 @@
 				14D0EB392928E69700C8A435 /* DeteiledRecipiesScreen.swift in Sources */,
 				14DDF8EB291C07C7002F7A87 /* NetworkingService .swift in Sources */,
 				14DDF8F2291C1D0E002F7A87 /* MainScreenPresenter.swift in Sources */,
-				14D0EB352928DE0800C8A435 /* ExtensionModel.swift in Sources */,
+				14D0EB352928DE0800C8A435 /* UIImageView.swift in Sources */,
 				14DDF8EE291C1CED002F7A87 /* MainScreen.swift in Sources */,
 				14DDF8D2291BFA5C002F7A87 /* TestApplication.xcdatamodeld in Sources */,
 				14DDF8E7291C07AE002F7A87 /* Assembler .swift in Sources */,

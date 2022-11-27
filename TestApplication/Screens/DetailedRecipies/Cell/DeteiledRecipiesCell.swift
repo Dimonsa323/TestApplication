@@ -7,10 +7,9 @@
 
 import UIKit
 
-class DetailedRecipiesCell: UITableViewCell {
+class DeteiledRecipiesCell: UITableViewCell {
 
     @IBOutlet weak var recipeImageView: UIImageView!
-    
     
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -22,10 +21,10 @@ class DetailedRecipiesCell: UITableViewCell {
     }
 }
 
-extension DetailedRecipiesCell {
+extension DeteiledRecipiesCell {
     
     func config(with recipe: Recipe) {
-        recipe.loadAsyncImage(image: recipe.image, closure: { image in
+        recipeImageView.loadAsyncImage(image: recipe.image, closure: { image in
             self.recipeImageView.image = image
         })
         recipeNameLabel.text = recipe.label

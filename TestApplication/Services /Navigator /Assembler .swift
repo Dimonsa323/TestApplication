@@ -12,7 +12,7 @@ class Assembler {
     
     private let networking = NetworkingService()
     
-    func createMainScreen(navigator: NavigatorProtocol, networking: NetwotkingServiceProtocol) -> UIViewController {
+    func createMainScreen(navigator: NavigatorProtocol) -> UIViewController {
         
         let presenter = MainScreenPresenter(navigator: navigator, networking: networking)
         let vc = MainScreen(presenter: presenter)
@@ -20,11 +20,18 @@ class Assembler {
         return vc
     }
     
-    func openRecepiesScreen(navigator: NavigatorProtocol, networking: NetwotkingServiceProtocol) -> UIViewController {
+    func detailMenuRecipies(navigator: NavigatorProtocol, type: MenuActions) -> UIViewController {
         
-        let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)
-        let vc = RecepiesScreen(presenter: presenter)
+        let presenter = DetailedRecipiesPresenter(navigator: navigator, networking: networking, type: type)
+        let vc = DeteiledRecipiesScreen(presenter: presenter)
         
         return vc 
+    }
+    
+    func showFlowController(navigator: NavigatorProtocol) -> UIViewController {
+        
+        let vc = FlowController(navigator: navigator, networking: networking)
+        
+        return vc
     }
 }

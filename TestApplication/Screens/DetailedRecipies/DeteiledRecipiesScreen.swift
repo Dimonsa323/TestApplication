@@ -13,7 +13,7 @@ class DeteiledRecipiesScreen: UIViewController {
     @IBOutlet weak var recipeTableView: UITableView!
     
     private let presenter: DetailedRecipiesPresenterProtocol
-    private let cellIdentifier: String = String(describing: DetailedRecipiesCell.self)
+    private let cellIdentifier: String = String(describing: DeteiledRecipiesCell.self)
     
     init(presenter: DetailedRecipiesPresenterProtocol) {
         self.presenter = presenter
@@ -26,6 +26,9 @@ class DeteiledRecipiesScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.getInfo() {
+            self.recipeTableView.reloadData()
+        }
         setupUI()
     }
 
@@ -45,8 +48,7 @@ extension DeteiledRecipiesScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = recipeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DetailedRecipiesCell
-        
+        let cell = recipeTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DeteiledRecipiesCell
         let recepiesFood = presenter.recipesFood[indexPath.row]
         cell.config(with: recepiesFood.recipe)
         
@@ -54,8 +56,7 @@ extension DeteiledRecipiesScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        presenter.showDetailedVC(indexPath: indexPath) {
-//            self.recipeTableView.reloadData()
-      //  }
+        presenter.showDetailedVC(indexPath: indexPath)
+        
     }
 }

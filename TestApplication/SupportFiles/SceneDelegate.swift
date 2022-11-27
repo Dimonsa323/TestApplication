@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigator = Navigator()
         let networking = NetworkingService()
-//        let vc:FlowController = FlowController(navigator: navigator, networking: networking)
         let presenter = MainScreenPresenter(navigator: navigator, networking: networking)
         let vc = MainScreen(presenter: presenter)
         let navVC = UINavigationController(rootViewController: vc)

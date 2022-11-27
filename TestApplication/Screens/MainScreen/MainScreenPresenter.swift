@@ -9,25 +9,22 @@ import Foundation
 import UIKit
 
 protocol MainScreenPresenterProtocol {
-    func showNextScreen(view: UIViewController)
+    func showTabBarVC(view: UIViewController)
 }
 
 class MainScreenPresenter {
     private let navigator: NavigatorProtocol
-    private let networking: NetwotkingServiceProtocol
+    private let networking: NetworkingServiceProtocol
     
-    init(navigator: NavigatorProtocol, networking: NetwotkingServiceProtocol) {
+    init(navigator: NavigatorProtocol, networking: NetworkingServiceProtocol) {
         self.navigator = navigator
         self.networking = networking
     }
 }
 
 extension MainScreenPresenter: MainScreenPresenterProtocol {
-    func showNextScreen(view: UIViewController) {
-//        let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)
-//        let vc = RecepiesScreen(presenter: presenter)
-       // view.navigationController?.pushViewController(vc, animated: true)
-        navigator.showRecepiesVC(networking: networking, view: view, navigator: navigator)
-    }
     
+    func showTabBarVC(view: UIViewController) {
+        navigator.showTabBar(view: view)
+    }
 }

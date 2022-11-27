@@ -9,10 +9,23 @@ import Foundation
 import UIKit
 
 enum MenuActions: String, CaseIterable {
-    case meat = "Meat"
-    case chicken = "Chicken"
-    case fish = "Fish"
-    case greens = "Greens"
+    case meat
+    case chicken
+    case fish
+    case greens
+    
+    var title: String {
+        switch self {
+        case .meat:
+            return "Meat"
+        case .chicken:
+            return "Chicken"
+        case .fish:
+            return "Fish"
+        case .greens:
+            return "Greens"
+        }
+    }
     
     var partURL: String {
         switch self {
@@ -26,9 +39,9 @@ enum MenuActions: String, CaseIterable {
             return "greens"
         }
     }
-        
-        var imageView: UIImage? {
-            UIImage(named: self.rawValue)
-        }
+    
+    var sectionImage: String {
+        rawValue
     }
+}
 

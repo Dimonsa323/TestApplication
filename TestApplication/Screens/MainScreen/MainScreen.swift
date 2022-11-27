@@ -33,25 +33,15 @@ class MainScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-    }
-    
-}
-
-    // MARK: - Private Extension
-
-extension MainScreen {
-    func setupUI() {
         
     }
 }
 
-
-    // MARK: - IBAction
+// MARK: - Private Extension
 
 extension MainScreen {
     
     @IBAction func enterButton() {
-        presenter.showNextScreen(view: self)
+        presenter.showTabBarVC(view: self)
     }
 }

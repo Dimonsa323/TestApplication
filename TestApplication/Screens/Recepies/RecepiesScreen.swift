@@ -13,7 +13,6 @@ class RecepiesScreen: UIViewController {
     
     private let presenter: RecepiesScreenPresenterProtocol
     private let createCell: String = String(describing: RecipiesCell.self)
-    private let networking: NetworkingService = NetworkingService()
     
     init(presenter: RecepiesScreenPresenterProtocol) {
         self.presenter = presenter
@@ -27,17 +26,7 @@ class RecepiesScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        let url = NetworkingService()
-        url.getModel(type: .fish) { model in
-            print(model.count)
-            print("Fish")
-        }
-        url.getModel(type: .chicken) { model in
-            print(model.count)
-            print("Chicken")
-        }
     }
-    
 }
 
 extension RecepiesScreen {
@@ -48,6 +37,11 @@ extension RecepiesScreen {
     
     func setupNavigationController() {
         title = "Recipies"
+//        let attributes = [NSAttributedString.Key.font: UIFont(name: "SFProText-Semibold", size: 34)!]
+//        UINavigationBar.appearance().titleTextAttributes = attributes
+        
+//        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "SFProText Semibold", size: 34)], for: UIControl.State.normal)
+
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -74,18 +68,16 @@ extension RecepiesScreen: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let menuActions = presenter.menuActions[indexPath.item]
         
-        cell.configCell(with: menuActions.rawValue, image: menuActions)
+        cell.configCell(type: menuActions)
         
         return cell
-        
     }
-    
 }
 
 extension RecepiesScreen: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width - 32, height: 100)
+        CGSize(width: UIScreen.main.bounds.width - 32, height: 150)
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 class RecipiesCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var foodTextLabel: UILabel!
     @IBOutlet weak var imageViewLabel: UIImageView!
     
@@ -16,16 +16,15 @@ class RecipiesCell: UICollectionViewCell {
         super.awakeFromNib()
         setupUI()
     }
-
-    func configCell(with title: String, image: MenuActions) {
-        foodTextLabel.text = title
-        imageViewLabel.image = image.imageView
+    
+    func configCell(type: MenuActions) {
+        foodTextLabel.text = type.title
+        imageViewLabel.image = UIImage(named: type.sectionImage)
     }
 }
 
 extension RecipiesCell {
-    func setupUI() {
+    private func setupUI() {
         layer.cornerRadius = 8
-        backgroundColor = .brown
     }
 }
