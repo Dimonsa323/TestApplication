@@ -59,8 +59,8 @@ private extension FlowController {
     }
     
     func instantiateFavoriteVC() -> UINavigationController {
-        let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)
-        let vc = RecepiesScreen(presenter: presenter)
+        let presenter = FavoritePresenter(navigator: navigator, networking: networking)
+        let vc = FavoriteVC(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(
             title: "Favorite", image: UIImage(named: "Heart 2"), selectedImage: UIImage(named: "Heart 2")
@@ -69,8 +69,8 @@ private extension FlowController {
     }
     
     func instantiateProfileVC() -> UINavigationController {
-        let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)
-        let vc = RecepiesScreen(presenter: presenter)
+        let presenter = ProfilePresenter(navigator: navigator, networking: networking)
+        let vc = ProfileVC(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(
             title: "Profile", image: UIImage(named: "Profile 1"), selectedImage: UIImage(named: "Profile 1")

@@ -41,7 +41,7 @@ class DeteiledRecipiesScreen: UIViewController {
         presenter.getInfo() {
             self.recipeTableView.reloadData()
             self.view.hideActivityIndicatorView()
-            UIView.animate(withDuration: 2) {
+            UIView.animate(withDuration: 1) {
                 self.recipeTableView.layer.opacity = 1
             }
         }

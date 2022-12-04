@@ -93,18 +93,18 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = UIView()
-        footer.backgroundColor = UIColor.green
-        let titleButton = UIButton(frame: CGRect(x: 10, y: 5, width: 350, height: 30))
-        titleButton.setTitleColor(.brown, for: .normal)
+    
+        let titleButton = UIButton()
+        titleButton.backgroundColor = UIColor(named: "Rose")
+        titleButton.setTitleColor(.black, for: .normal)
         titleButton.setTitle("Full Recipe", for: .normal)
-        footer.addSubview(titleButton)
+        titleButton.layer.cornerRadius = 6
         
-        return footer
+        return titleButton
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 40
+        return 44
     }
 }
 
