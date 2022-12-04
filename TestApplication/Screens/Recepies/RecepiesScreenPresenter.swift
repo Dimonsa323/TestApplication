@@ -27,6 +27,7 @@ class RecepiesScreenPresenter {
     }
 }
 
+
 extension RecepiesScreenPresenter: RecepiesScreenPresenterProtocol {
     func showNextVC(indexPath: IndexPath, view: UIViewController) {
         let menuFoodAction = menuActions[indexPath.item]

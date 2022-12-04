@@ -8,8 +8,8 @@
 import UIKit
 
 class DeteiledRecipiesCell: UITableViewCell {
-
-    @IBOutlet weak var recipeImageView: UIImageView!
+    
+    @IBOutlet weak var recipeImageView: ImageView!
     
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -18,17 +18,23 @@ class DeteiledRecipiesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        recipeImageView.layer.cornerRadius = recipeImageView.bounds.height / 2
+        if recipeImageView.image == nil {
+            recipeImageView.showActivityIndicator()
+        }
     }
 }
 
 extension DeteiledRecipiesCell {
-    
     func config(with recipe: Recipe) {
-        recipeImageView.loadAsyncImage(image: recipe.image, closure: { image in
-            self.recipeImageView.image = image
-        })
+        recipeImageView.fetchImage(from: recipe.image)
+        self.recipeImageView.hideActivityIndicatorView()
         recipeNameLabel.text = recipe.label
         descriptionLabel.text = recipe.source
         authorNameLabel.text = recipe.source
     }
 }
+
+
+
+

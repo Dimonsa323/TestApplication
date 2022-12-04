@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreen" customModule="TestApplication" customModuleProvider="target">
             <connections>
                 <outlet property="cookLabel" destination="1G8-ve-iSH" id="1EH-UR-Hdx"/>
+                <outlet property="enterUIButton" destination="rGn-ob-nuj" id="qRd-Xw-jhA"/>
                 <outlet property="textLabel" destination="wtb-lo-fSp" id="MQn-xf-BIM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-lo-fSp">
-                    <rect key="frame" x="16" y="660.66666666666663" width="358" height="50.333333333333371"/>
+                    <rect key="frame" x="16" y="643.66666666666663" width="358" height="50.333333333333371"/>
                     <string key="text">Wellcome !
 Looking for a great home-cooked meal? 
 Log in these app, and you'll be cooking it up in no time</string>
@@ -34,21 +35,24 @@ Log in these app, and you'll be cooking it up in no time</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cook book" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G8-ve-iSH">
-                    <rect key="frame" x="16" y="609.66666666666663" width="358" height="43"/>
+                    <rect key="frame" x="16" y="592.66666666666663" width="358" height="43"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGn-ob-nuj">
-                    <rect key="frame" x="16" y="727" width="358" height="31"/>
+                    <rect key="frame" x="16" y="710" width="358" height="44"/>
                     <color key="backgroundColor" name="Rose"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="oaD-Be-oe3"/>
+                    </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Enter">
                         <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="enterButton" destination="-1" eventType="touchUpInside" id="3KI-7a-1AM"/>
+                        <action selector="enterButton" destination="-1" eventType="touchUpInside" id="mUd-8X-vSn"/>
                     </connections>
                 </button>
             </subviews>
@@ -59,7 +63,7 @@ Log in these app, and you'll be cooking it up in no time</string>
                 <constraint firstAttribute="bottom" secondItem="8CF-gV-Gu7" secondAttribute="bottom" id="7vM-BO-sdK"/>
                 <constraint firstItem="rGn-ob-nuj" firstAttribute="top" secondItem="wtb-lo-fSp" secondAttribute="bottom" constant="16" id="7wp-uF-Vy8"/>
                 <constraint firstItem="8CF-gV-Gu7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9yL-xz-BhC"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rGn-ob-nuj" secondAttribute="bottom" constant="52" id="G7A-9z-9SH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rGn-ob-nuj" secondAttribute="bottom" constant="56" id="G7A-9z-9SH"/>
                 <constraint firstItem="wtb-lo-fSp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Hur-hq-dQv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8CF-gV-Gu7" secondAttribute="trailing" id="UOd-Zs-4ss"/>
                 <constraint firstItem="8CF-gV-Gu7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cFb-S2-oDj"/>

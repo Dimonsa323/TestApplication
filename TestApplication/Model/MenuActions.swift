@@ -40,6 +40,19 @@ enum MenuActions: String, CaseIterable {
         }
     }
     
+    var navTitle: String {
+        switch self {
+        case .meat:
+            return "Meat recipies"
+        case .fish:
+            return "Fish recipies"
+        case .chicken:
+            return "Chicken recipies"
+        case .greens:
+            return "Greens recipies"
+        }
+    }
+    
     var sectionImage: String {
         rawValue
     }

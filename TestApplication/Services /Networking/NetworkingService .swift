@@ -13,30 +13,24 @@ protocol NetworkingServiceProtocol {
     
 }
 
-class NetworkingService {
+class NetworkingService: NetworkingServiceProtocol {
     func getModel(type: MenuActions, closure: @escaping ([Hits]) -> ()) {
         
         guard let url = URL(string: "https://edamam-recipe-search.p.rapidapi.com/search?q=\(type.partURL)") else {
             return
         }
         
-        let headers = [
-            "X-RapidAPI-Key": "d48b37f797msh914f92f5efbf2b8p18795ejsn2d67a777e5d2",
-            "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com"
-        ]
+        let request = createURLRequest(url: url)
         
-        var request = URLRequest(url: url)
-        request.allHTTPHeaderFields = headers
-        
-        URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
-            if let error = error {
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error {
                 print(error)
                 return
             }
-            if let response = response {
+            if let response {
                 print(response)
             }
-            if let data = data {
+            if let data {
                 print(data)
             }
             let decoder = JSONDecoder()
@@ -53,8 +47,37 @@ class NetworkingService {
             }
         }.resume()
     }
-}
-
-extension NetworkingService: NetworkingServiceProtocol {
     
+    static func loadAsyncImage(url: URL, closure: @escaping (Data, URLResponse) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error {
+                print("error")
+                return
+            }
+            
+            guard let data, let response else {
+                return
+            }
+            
+            guard let responseURL = response.url else {
+                return
+            }
+            
+            guard url == responseURL else {
+                return
+            }
+            
+            closure(data, response)
+        }.resume()
+    }
+    
+    private func createURLRequest(url: URL) -> URLRequest {
+        var request = URLRequest(url: url)
+        let headers = [
+            "X-RapidAPI-Key": "d48b37f797msh914f92f5efbf2b8p18795ejsn2d67a777e5d2",
+            "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com"
+        ]
+        request.allHTTPHeaderFields = headers
+        return request
+    }
 }

@@ -7,16 +7,21 @@
 
 import UIKit
 
+    // MARK: - Class FlowController
+
 final class FlowController: UIViewController, UITabBarControllerDelegate {
     
-    private let tabBarVC: UITabBarController = UITabBarController()
+    // MARK: - Properties
     
+    private let tabBarVC: UITabBarController = UITabBarController()
     private lazy var recepiesScreen: UINavigationController = instantiateRecepiesVC()
     private lazy var favoriteScreen: UINavigationController = instantiateFavoriteVC()
     private lazy var profileScreen: UINavigationController = instantiateProfileVC()
     
     private let navigator: NavigatorProtocol
     private let networking: NetworkingServiceProtocol
+    
+    // MARK: - Init
     
     init(navigator: NavigatorProtocol, networking: NetworkingServiceProtocol) {
         self.navigator = navigator
@@ -28,13 +33,20 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        setUIAppearanceCustomNavBar(type: .opaque)
     }
 }
 
+    // MARK: - Private Extension
+
 private extension FlowController {
+    
+    // MARK: - Method
     
     func instantiateRecepiesVC() -> UINavigationController {
         let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)

@@ -12,9 +12,10 @@ protocol NavigatorProtocol {
     func startVC() -> UIViewController
     func showDetailedVC(view: UIViewController, type: MenuActions)
     func showTabBar(view: UIViewController)
+    func showIngredientsVC(view: UIViewController, detailedType: Recipe)
 }
 
-class Navigator {
+class Navigator: NavigatorProtocol {
     
     private let assembler = Assembler()
     
@@ -35,8 +36,9 @@ class Navigator {
         vc.modalPresentationStyle = .fullScreen
         view.navigationController?.present(vc, animated: true)
     }
-}
-
-extension Navigator: NavigatorProtocol {
-   
+    
+    func showIngredientsVC(view: UIViewController, detailedType: Recipe) {
+        let vc = assembler.showIngredients(navigator: self, detailedRecipe: detailedType)
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
 }

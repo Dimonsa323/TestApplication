@@ -3,20 +3,21 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="KGk-i7-Jjw" customClass="DeteiledRecipiesCell" customModule="TestApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="DeteiledRecipiesCell" customModule="TestApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-a7-vfr">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageView" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-a7-vfr" customClass="ImageView" customModule="TestApplication" customModuleProvider="target">
                         <rect key="frame" x="16" y="23" width="72" height="72"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="72" id="ibm-rT-DNN"/>
@@ -24,36 +25,36 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2X-ER-3o7">
-                        <rect key="frame" x="96" y="40.333333333333336" width="208" height="20.333333333333336"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="96" y="40.333333333333336" width="208" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" name="#B9B9B9"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xm-df-qgA">
-                        <rect key="frame" x="96" y="68.666666666666671" width="192" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="96" y="83.666666666666671" width="192" height="14.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" name="#B9B9B9"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ1-A3-E78">
                         <rect key="frame" x="96" y="15.999999999999998" width="208" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="e2X-ER-3o7" firstAttribute="top" secondItem="rQ1-A3-E78" secondAttribute="bottom" constant="4" id="643-FJ-J4P"/>
+                    <constraint firstItem="3xm-df-qgA" firstAttribute="firstBaseline" secondItem="AuF-a7-vfr" secondAttribute="baseline" id="60Z-CM-B7r"/>
                     <constraint firstAttribute="trailing" secondItem="rQ1-A3-E78" secondAttribute="trailing" constant="16" id="6sd-xw-wAm"/>
                     <constraint firstItem="3xm-df-qgA" firstAttribute="leading" secondItem="AuF-a7-vfr" secondAttribute="trailing" constant="8" id="FNu-3F-L98"/>
+                    <constraint firstItem="rQ1-A3-E78" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="MF9-Qk-YUM"/>
                     <constraint firstItem="e2X-ER-3o7" firstAttribute="leading" secondItem="AuF-a7-vfr" secondAttribute="trailing" constant="8" id="Meb-UP-lTf"/>
-                    <constraint firstItem="3xm-df-qgA" firstAttribute="top" secondItem="e2X-ER-3o7" secondAttribute="bottom" constant="8" id="Sbu-9B-Hiy"/>
+                    <constraint firstItem="e2X-ER-3o7" firstAttribute="top" secondItem="rQ1-A3-E78" secondAttribute="bottom" constant="4" id="V6K-UN-kJ7"/>
                     <constraint firstAttribute="bottom" secondItem="AuF-a7-vfr" secondAttribute="bottom" constant="23" id="WMJ-rU-GmW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3xm-df-qgA" secondAttribute="trailing" constant="16" id="bjF-9k-Hes"/>
                     <constraint firstItem="rQ1-A3-E78" firstAttribute="leading" secondItem="AuF-a7-vfr" secondAttribute="trailing" constant="8" id="jrB-HM-u9H"/>
                     <constraint firstItem="AuF-a7-vfr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kfm-xt-SCK"/>
                     <constraint firstAttribute="trailing" secondItem="e2X-ER-3o7" secondAttribute="trailing" constant="16" id="oAK-gw-cQX"/>
-                    <constraint firstItem="rQ1-A3-E78" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="zBL-AB-joQ"/>
                     <constraint firstItem="AuF-a7-vfr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="zYo-VS-ZQ3"/>
                 </constraints>
             </tableViewCellContentView>
@@ -61,10 +62,16 @@
             <connections>
                 <outlet property="authorNameLabel" destination="3xm-df-qgA" id="Smb-fp-aWr"/>
                 <outlet property="descriptionLabel" destination="e2X-ER-3o7" id="3YW-rl-osj"/>
-                <outlet property="recipeImageView" destination="AuF-a7-vfr" id="Mem-mB-CEz"/>
+                <outlet property="recipeImageView" destination="AuF-a7-vfr" id="8Jg-ve-dMx"/>
                 <outlet property="recipeNameLabel" destination="rQ1-A3-E78" id="lfL-Js-3lt"/>
             </connections>
-            <point key="canvasLocation" x="101.53846153846153" y="43.364928909952603"/>
+            <point key="canvasLocation" x="101.53846153846153" y="45.85308056872038"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ImageView" width="128" height="128"/>
+        <namedColor name="#B9B9B9">
+            <color red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

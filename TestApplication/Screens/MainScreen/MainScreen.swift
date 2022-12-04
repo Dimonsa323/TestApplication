@@ -7,12 +7,13 @@
 
 import UIKit
 
-// MARK: - Class
+    // MARK: - Class
 
 class MainScreen: UIViewController {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var enterUIButton: UIButton!
     @IBOutlet weak var cookLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
     
@@ -33,15 +34,16 @@ class MainScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        enterUIButton.layer.cornerRadius = 6
     }
 }
 
-// MARK: - Private Extension
+    // MARK: - Private Extension
 
 extension MainScreen {
     
     @IBAction func enterButton() {
         presenter.showTabBarVC(view: self)
+         
     }
 }

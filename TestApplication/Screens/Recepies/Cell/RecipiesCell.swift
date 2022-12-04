@@ -7,6 +7,8 @@
 
 import UIKit
 
+    // MARK: - Class RecipiesCell
+
 class RecipiesCell: UICollectionViewCell {
     
     @IBOutlet weak var foodTextLabel: UILabel!

@@ -37,11 +37,6 @@ extension RecepiesScreen {
     
     func setupNavigationController() {
         title = "Recipies"
-//        let attributes = [NSAttributedString.Key.font: UIFont(name: "SFProText-Semibold", size: 34)!]
-//        UINavigationBar.appearance().titleTextAttributes = attributes
-        
-//        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "SFProText Semibold", size: 34)], for: UIControl.State.normal)
-
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
     }

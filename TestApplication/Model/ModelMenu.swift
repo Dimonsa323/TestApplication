@@ -8,7 +8,6 @@
 import Foundation
 
 struct FoodMenu: Decodable {
-    
     let hits: [Hits]
 }
 
@@ -25,7 +24,7 @@ struct Recipe: Decodable {
     let totalWeight: Double
     let ingredients: [Ingredients]
     let totalTime: Double
-}
+} 
 
 struct Ingredients: Decodable {
     let text: String

@@ -34,4 +34,11 @@ class Assembler {
         
         return vc
     }
+    
+    func showIngredients(navigator: NavigatorProtocol, detailedRecipe: Recipe) -> UIViewController {
+        let presenter = IngredientsVCPresenter(navigator: navigator, networking: networking, detailedRecipe: detailedRecipe)
+        let vc = IngredientsVC(presenter: presenter)
+        
+        return vc
+    }
 }
