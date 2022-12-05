@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1477B0FA2938A6C6006A50C9 /* View+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1477B0F92938A6C6006A50C9 /* View+ActivityIndicator.swift */; };
+		1498D5EF293DF4BB00CD7344 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1498D5ED293DF4BB00CD7344 /* FavoriteCell.swift */; };
+		1498D5F0293DF4BB00CD7344 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1498D5EE293DF4BB00CD7344 /* FavoriteCell.xib */; };
 		14AA8223293BCE7D0044164E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA8221293BCE7D0044164E /* ProfileVC.swift */; };
 		14AA8224293BCE7D0044164E /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14AA8222293BCE7D0044164E /* ProfileVC.xib */; };
 		14AA8227293BCE9B0044164E /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA8225293BCE9B0044164E /* FavoriteVC.swift */; };
@@ -24,7 +26,6 @@
 		14D0EB2829253FCE00C8A435 /* MenuActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB2729253FCE00C8A435 /* MenuActions.swift */; };
 		14D0EB312925714200C8A435 /* RecipiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB2F2925714200C8A435 /* RecipiesCell.swift */; };
 		14D0EB322925714200C8A435 /* RecipiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0EB302925714200C8A435 /* RecipiesCell.xib */; };
-		14D0EB352928DE0800C8A435 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB342928DE0800C8A435 /* UIImageView.swift */; };
 		14D0EB392928E69700C8A435 /* DeteiledRecipiesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB372928E69700C8A435 /* DeteiledRecipiesScreen.swift */; };
 		14D0EB3A2928E69700C8A435 /* DeteiledRecipiesScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0EB382928E69700C8A435 /* DeteiledRecipiesScreen.xib */; };
 		14D0EB3C2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB3B2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		1477B0F92938A6C6006A50C9 /* View+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		1498D5ED293DF4BB00CD7344 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		1498D5EE293DF4BB00CD7344 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		14AA8221293BCE7D0044164E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		14AA8222293BCE7D0044164E /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		14AA8225293BCE9B0044164E /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
@@ -67,7 +70,6 @@
 		14D0EB2729253FCE00C8A435 /* MenuActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuActions.swift; sourceTree = "<group>"; };
 		14D0EB2F2925714200C8A435 /* RecipiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipiesCell.swift; sourceTree = "<group>"; };
 		14D0EB302925714200C8A435 /* RecipiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipiesCell.xib; sourceTree = "<group>"; };
-		14D0EB342928DE0800C8A435 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		14D0EB372928E69700C8A435 /* DeteiledRecipiesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteiledRecipiesScreen.swift; sourceTree = "<group>"; };
 		14D0EB382928E69700C8A435 /* DeteiledRecipiesScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeteiledRecipiesScreen.xib; sourceTree = "<group>"; };
 		14D0EB3B2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedRecipiesPresenter.swift; sourceTree = "<group>"; };
@@ -105,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1498D5EC293DF49B00CD7344 /* FavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				1498D5ED293DF4BB00CD7344 /* FavoriteCell.swift */,
+				1498D5EE293DF4BB00CD7344 /* FavoriteCell.xib */,
+			);
+			path = FavoriteCell;
+			sourceTree = "<group>";
+		};
 		14AA821E293BCE0D0044164E /* TabBarVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +128,7 @@
 		14AA821F293BCE410044164E /* FavoriteVC */ = {
 			isa = PBXGroup;
 			children = (
+				1498D5EC293DF49B00CD7344 /* FavoriteCell */,
 				14AA8225293BCE9B0044164E /* FavoriteVC.swift */,
 				14AA8226293BCE9B0044164E /* FavoriteVC.xib */,
 				14AA822B293BCEC60044164E /* FavoritePresenter.swift */,
@@ -174,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				14D0EB1F2921307600C8A435 /* UIViewController.swift */,
-				14D0EB342928DE0800C8A435 /* UIImageView.swift */,
 				14D0EB5229365BCA00C8A435 /* NavBarAppearance.swift */,
 				1477B0F92938A6C6006A50C9 /* View+ActivityIndicator.swift */,
 			);
@@ -408,6 +419,7 @@
 				14DDF8EF291C1CED002F7A87 /* MainScreen.xib in Resources */,
 				14D0EB322925714200C8A435 /* RecipiesCell.xib in Resources */,
 				14AA8224293BCE7D0044164E /* ProfileVC.xib in Resources */,
+				1498D5F0293DF4BB00CD7344 /* FavoriteCell.xib in Resources */,
 				14D0EB512933EBB800C8A435 /* ingredientsCell.xib in Resources */,
 				14D0EB18291EF61800C8A435 /* RecepiesScreen.xib in Resources */,
 				14AA8228293BCE9B0044164E /* FavoriteVC.xib in Resources */,
@@ -428,7 +440,6 @@
 				14D0EB392928E69700C8A435 /* DeteiledRecipiesScreen.swift in Sources */,
 				14DDF8EB291C07C7002F7A87 /* NetworkingService .swift in Sources */,
 				14DDF8F2291C1D0E002F7A87 /* MainScreenPresenter.swift in Sources */,
-				14D0EB352928DE0800C8A435 /* UIImageView.swift in Sources */,
 				14AA8223293BCE7D0044164E /* ProfileVC.swift in Sources */,
 				14AA822C293BCEC60044164E /* FavoritePresenter.swift in Sources */,
 				14DDF8EE291C1CED002F7A87 /* MainScreen.swift in Sources */,
@@ -451,6 +462,7 @@
 				14AA8227293BCE9B0044164E /* FavoriteVC.swift in Sources */,
 				14AA822A293BCEB60044164E /* ProfilePresenter.swift in Sources */,
 				14D0EB2829253FCE00C8A435 /* MenuActions.swift in Sources */,
+				1498D5EF293DF4BB00CD7344 /* FavoriteCell.swift in Sources */,
 				14D0EB1D2920EA4200C8A435 /* FlowController.swift in Sources */,
 				1477B0FA2938A6C6006A50C9 /* View+ActivityIndicator.swift in Sources */,
 			);

@@ -22,10 +22,12 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
     }
 }
 
 extension ProfileVC {
-    
+    func setupUI() {
+        
+    }
 }

@@ -44,6 +44,5 @@ extension MainScreen {
     
     @IBAction func enterButton() {
         presenter.showTabBarVC(view: self)
-         
     }
 }
