@@ -33,12 +33,6 @@ extension RecepiesScreen {
     func setupUI() {
         setupCollectionView()
         setupNavigationController()
-        setupTabBarController()
-    }
-    
-    func setupTabBarController() {
-        
-        navigationController?.tabBarController
     }
     
     func setupNavigationController() {

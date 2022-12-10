@@ -17,14 +17,11 @@ protocol ProfilePresenterProtocol {
 class ProfilePresenter: ProfilePresenterProtocol {
     
     private let navigator: NavigatorProtocol
-    private let networking: NetworkingServiceProtocol
+   
     
-    init(navigator: NavigatorProtocol, networking: NetworkingServiceProtocol) {
+    init(navigator: NavigatorProtocol) {
         self.navigator = navigator
-        self.networking = networking
     }
-    
-    
 }
 
 

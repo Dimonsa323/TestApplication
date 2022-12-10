@@ -11,6 +11,7 @@ import UIKit
 class Assembler {
     
     private let networking = NetworkingService()
+    private let dataBase = CoreDataStore() 
     
     func createMainScreen(navigator: NavigatorProtocol) -> UIViewController {
         
@@ -36,7 +37,7 @@ class Assembler {
     }
     
     func showIngredients(navigator: NavigatorProtocol, detailedRecipe: Recipe) -> UIViewController {
-        let presenter = IngredientsVCPresenter(navigator: navigator, networking: networking, detailedRecipe: detailedRecipe)
+        let presenter = IngredientsVCPresenter(navigator: navigator, networking: networking, detailedRecipe: detailedRecipe, coreData: dataBase)
         let vc = IngredientsVC(presenter: presenter)
         
         return vc

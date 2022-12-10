@@ -24,6 +24,27 @@ struct Recipe: Decodable {
     let totalWeight: Double
     let ingredients: [Ingredients]
     let totalTime: Double
+    
+    init(label: String, image: String, source: String, calories: Double,
+         totalWeight: Double, totalTime: Double, ingredients: Ingredients) {
+        self.label = label
+        self.image = image
+        self.source = source
+        self.calories = calories
+        self.totalWeight = totalWeight
+        self.totalTime = totalTime
+        self.ingredients = Ingredients
+    }
+    
+    init(favoriteRecipe: FavoriteRecipe) {
+        self.label = favoriteRecipe.label ?? ""
+        self.image = favoriteRecipe.image ?? ""
+        self.source = favoriteRecipe.source ?? ""
+        self.calories = favoriteRecipe.calories
+        self.totalWeight = favoriteRecipe.totalWeight
+        self.totalTime = favoriteRecipe.totalTime
+        self.ingredients = favoriteRecipe.ingredients
+    }
 } 
 
 struct Ingredients: Decodable {

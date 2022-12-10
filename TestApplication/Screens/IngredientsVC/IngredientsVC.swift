@@ -14,7 +14,7 @@ class IngredientsVC: UIViewController {
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+  //  @IBOutlet weak var titleLabel: UILabel!
     
     private let presenter: IngredientsVCPresenterProtocol
     private let ingredientCell: String = String(describing: ingredientsCell.self)
@@ -41,12 +41,15 @@ extension IngredientsVC {
         setupTableView()
         setupNavigationController()
         setupDetailRecipe()
+        presenter.fetchRequest {
+            self.tableView.reloadData()
+        }
     }
 
     func setupDetailRecipe() {
         imageView.fetchImage(from: presenter.detailedRecipe.image)
 
-        titleLabel.text = "Ingredients"
+      //  titleLabel.text = "Ingredients"
         caloriesLabel.text = String(format: "Calories: %.0f",
                                     presenter.detailedRecipe.calories) + " " + "Cal"
         weightLabel.text = String(format: "Weight: %.0f",
@@ -75,7 +78,9 @@ extension IngredientsVC {
                                                
     @objc
     func didTapUser() {
-        
+        presenter.saveUserInDataBase(recipe: presenter.detailedRecipe) {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -93,7 +98,7 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    
+        
         let titleButton = UIButton()
         titleButton.backgroundColor = UIColor(named: "Rose")
         titleButton.setTitleColor(.black, for: .normal)
@@ -102,9 +107,26 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
         
         return titleButton
     }
-
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
         return 44
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.init(name: "SFProText-Semibold", size: 34)
+        titleLabel.backgroundColor = .black
+        titleLabel.numberOfLines = 0
+        titleLabel.textColor = .white
+        titleLabel.text = "Ingredients"
+        
+        return titleLabel
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 32
+    }
 }
-

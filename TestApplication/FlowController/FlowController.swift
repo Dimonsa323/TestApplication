@@ -14,6 +14,7 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
     // MARK: - Properties
     
     private let tabBarVC: UITabBarController = UITabBarController()
+    
     private lazy var recepiesScreen: UINavigationController = instantiateRecepiesVC()
     private lazy var favoriteScreen: UINavigationController = instantiateFavoriteVC()
     private lazy var profileScreen: UINavigationController = instantiateProfileVC()
@@ -39,6 +40,7 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
         super.viewDidLoad()
         initialSetup()
         setUIAppearanceCustomNavBar(type: .opaque)
+        setupVCs()
     }
 }
 
@@ -47,6 +49,10 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
 private extension FlowController {
     
     // MARK: - Method
+
+    func setupVCs() {
+        tabBarVC.navigationController?.setViewControllers([recepiesScreen, favoriteScreen, profileScreen], animated: true)
+    }
     
     func instantiateRecepiesVC() -> UINavigationController {
         let presenter = RecepiesScreenPresenter(navigator: navigator, networking: networking)
@@ -69,7 +75,7 @@ private extension FlowController {
     }
     
     func instantiateProfileVC() -> UINavigationController {
-        let presenter = ProfilePresenter(navigator: navigator, networking: networking)
+        let presenter = ProfilePresenter(navigator: navigator)
         let vc = ProfileVC(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(

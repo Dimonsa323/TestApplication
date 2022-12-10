@@ -10,7 +10,6 @@ import UIKit
 
 protocol NetworkingServiceProtocol {
     func getModel(type: MenuActions, closure: @escaping ([Hits]) -> ())
-    
 }
 
 class NetworkingService: NetworkingServiceProtocol {

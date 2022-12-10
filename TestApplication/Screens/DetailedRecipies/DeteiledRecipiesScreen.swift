@@ -7,7 +7,7 @@
 
 import UIKit
 
-    // MARK: - Class DeteiledRecipiesScreen
+// MARK: - Class DeteiledRecipiesScreen
 
 class DeteiledRecipiesScreen: UIViewController {
     
@@ -46,9 +46,12 @@ class DeteiledRecipiesScreen: UIViewController {
             }
         }
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-           navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tabBarController?.tabBar.isHidden = false
+        
     }
 }
 

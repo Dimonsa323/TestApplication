@@ -23,4 +23,10 @@ class FavoritePresenter: FavoritePresenterProtocol {
         self.navigator = navigator
         self.networking = networking
     }
-}
+    
+    func getInfo(closure: @escaping () -> Void) {
+        
+        }
+    }
+
+
