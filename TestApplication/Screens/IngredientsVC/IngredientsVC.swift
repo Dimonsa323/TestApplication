@@ -14,7 +14,6 @@ class IngredientsVC: UIViewController {
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-  //  @IBOutlet weak var titleLabel: UILabel!
     
     private let presenter: IngredientsVCPresenterProtocol
     private let ingredientCell: String = String(describing: ingredientsCell.self)
@@ -32,8 +31,12 @@ class IngredientsVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         imageView.layer.cornerRadius = 8
-        self.tabBarController?.tabBar.isHidden = true
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        hidesBottomBarWhenPushed = true
+//    }
 }
 
 extension IngredientsVC {
@@ -41,15 +44,11 @@ extension IngredientsVC {
         setupTableView()
         setupNavigationController()
         setupDetailRecipe()
-        presenter.fetchRequest {
-            self.tableView.reloadData()
-        }
     }
-
+    
     func setupDetailRecipe() {
         imageView.fetchImage(from: presenter.detailedRecipe.image)
-
-      //  titleLabel.text = "Ingredients"
+        
         caloriesLabel.text = String(format: "Calories: %.0f",
                                     presenter.detailedRecipe.calories) + " " + "Cal"
         weightLabel.text = String(format: "Weight: %.0f",
@@ -71,16 +70,14 @@ extension IngredientsVC {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-   func setupNavBar() {
-       let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Vector"), style: .plain, target: self, action: #selector(didTapUser))
-       navigationItem.rightBarButtonItem = rightBarButtonItem
+    func setupNavBar() {
+        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Vector"), style: .plain, target: self, action: #selector(didTapUser))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
-                                               
+    
     @objc
     func didTapUser() {
-        presenter.saveUserInDataBase(recipe: presenter.detailedRecipe) {
-            self.tableView.reloadData()
-        }
+        presenter.saveIngredientsInCoreData()
     }
 }
 

@@ -13,6 +13,7 @@ protocol NavigatorProtocol {
     func showDetailedVC(view: UIViewController, type: MenuActions)
     func showTabBar(view: UIViewController)
     func showIngredientsVC(view: UIViewController, detailedType: Recipe)
+    func showFavoriteVC() -> UINavigationController
 }
 
 class Navigator: NavigatorProtocol {
@@ -27,6 +28,7 @@ class Navigator: NavigatorProtocol {
     
     func showDetailedVC(view: UIViewController, type: MenuActions) {
         let vc = assembler.detailMenuRecipies(navigator: self, type: type)
+        vc.hidesBottomBarWhenPushed = true
         view.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -40,5 +42,11 @@ class Navigator: NavigatorProtocol {
     func showIngredientsVC(view: UIViewController, detailedType: Recipe) {
         let vc = assembler.showIngredients(navigator: self, detailedRecipe: detailedType)
         view.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showFavoriteVC() -> UINavigationController {
+        let vc = assembler.instantiateFavoriteVC(navigator: self)
+        
+        return vc
     }
 }

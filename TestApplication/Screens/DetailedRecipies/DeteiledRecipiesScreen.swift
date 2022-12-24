@@ -36,11 +36,8 @@ class DeteiledRecipiesScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        self.tabBarController?.tabBar.isHidden = true
-        view.showActivityIndicator()
         presenter.getInfo() {
             self.recipeTableView.reloadData()
-            self.view.hideActivityIndicatorView()
             UIView.animate(withDuration: 1) {
                 self.recipeTableView.layer.opacity = 1
             }
@@ -50,8 +47,7 @@ class DeteiledRecipiesScreen: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
-        tabBarController?.tabBar.isHidden = false
-        
+        hidesBottomBarWhenPushed = false
     }
 }
 

@@ -8,7 +8,10 @@
 import UIKit
 
 class ProfileVC: UIViewController {
-
+    
+    @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var downloadButton: UIButton!
+    
     let presenter: ProfilePresenterProtocol
     
     init(presenter: ProfilePresenterProtocol) {
@@ -22,12 +25,11 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        imageProfile.layer.cornerRadius = 16
+        downloadButton.layer.cornerRadius = 6
     }
 }
 
 extension ProfileVC {
-    func setupUI() {
-        
-    }
+    
 }

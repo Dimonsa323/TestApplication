@@ -19,16 +19,13 @@ class DeteiledRecipiesCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         recipeImageView.layer.cornerRadius = recipeImageView.bounds.height / 2
-        if recipeImageView.image == nil {
-            recipeImageView.showActivityIndicator()
         }
     }
-}
+
 
 extension DeteiledRecipiesCell {
     func config(with recipe: Recipe) {
         recipeImageView.fetchImage(from: recipe.image)
-        self.recipeImageView.hideActivityIndicatorView()
         recipeNameLabel.text = recipe.label
         descriptionLabel.text = recipe.source
         authorNameLabel.text = recipe.source

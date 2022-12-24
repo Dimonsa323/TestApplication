@@ -42,4 +42,14 @@ class Assembler {
         
         return vc
     }
+    
+    func instantiateFavoriteVC(navigator: NavigatorProtocol) -> UINavigationController {
+        let presenter = FavoritePresenter(navigator: navigator, networking: networking, cordata: dataBase)
+        let vc = FavoriteVC(presenter: presenter)
+        let navigator = UINavigationController(rootViewController: vc)
+        vc.tabBarItem = UITabBarItem(
+            title: "Favorite", image: UIImage(named: "Heart 2"), selectedImage: UIImage(named: "Heart 2")
+        )
+        return navigator
+    }
 }

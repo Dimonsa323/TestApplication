@@ -18,19 +18,18 @@ class FavoriteCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         imageFavoriteView.layer.cornerRadius = imageFavoriteView.bounds.height / 2
-        if imageFavoriteView.image == nil {
-            imageFavoriteView.showActivityIndicator()
-        }
+//        if imageFavoriteView.image == nil {
+//            imageFavoriteView.showActivityIndicator()
+//        }
     }
 }
 
 extension FavoriteCell {
-    
-    func config(with recipe: Recipe) {
-        imageFavoriteView.fetchImage(from: recipe.image)
-        self.hideActivityIndicatorView()
-        nameLabel.text = recipe.label
-        infoLabel.text = recipe.source
-        authorLabel.text = recipe.source
+    func config(with recipe: Hits) {
+        imageFavoriteView.fetchImage(from: recipe.recipe.image)
+//        self.hideActivityIndicatorView()
+        nameLabel.text = recipe.recipe.label
+        infoLabel.text = recipe.recipe.source
+        authorLabel.text = recipe.recipe.source
     }
 }

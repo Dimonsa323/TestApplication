@@ -19,37 +19,57 @@ struct Recipe: Decodable {
     let label: String
     let image: String
     let source: String
-    let url: String?
     let calories: Double
     let totalWeight: Double
     let ingredients: [Ingredients]
     let totalTime: Double
     
     init(label: String, image: String, source: String, calories: Double,
-         totalWeight: Double, totalTime: Double, ingredients: Ingredients) {
+         totalWeight: Double, totalTime: Double, ingredients: [Ingredients]) {
         self.label = label
         self.image = image
         self.source = source
         self.calories = calories
         self.totalWeight = totalWeight
         self.totalTime = totalTime
-        self.ingredients = Ingredients
+        self.ingredients = ingredients
     }
     
-    init(favoriteRecipe: FavoriteRecipe) {
-        self.label = favoriteRecipe.label ?? ""
-        self.image = favoriteRecipe.image ?? ""
-        self.source = favoriteRecipe.source ?? ""
-        self.calories = favoriteRecipe.calories
-        self.totalWeight = favoriteRecipe.totalWeight
-        self.totalTime = favoriteRecipe.totalTime
-        self.ingredients = favoriteRecipe.ingredients
+    init(recipe: FavoriteRecipeCD) {
+        self.label = recipe.label ?? ""
+        self.image = recipe.image ?? ""
+        self.source = recipe.source ?? ""
+        self.calories = recipe.calories
+        self.totalWeight = recipe.totalWeight
+        self.totalTime = recipe.totalTime
+        
+        let ingredientCD = recipe.ingredients.array(of: IngredientCD.self)
+        let appIngrediens = ingredientCD.map { Ingredients(ingredientCD: $0) }
+        
+        self.ingredients = appIngrediens
+        }
     }
-} 
 
-struct Ingredients: Decodable {
+struct Ingredients: Decodable, Hashable {
     let text: String
     let image: String?
+    
+    init(text: String, image: String) {
+        self.image = image
+        self.text = text
+    }
+    
+    init(ingredientCD: IngredientCD) {
+        self.text = ingredientCD.text ?? ""
+        self.image = ingredientCD.image
+    }
 }
 
-
+extension Optional where Wrapped == NSSet {
+    func array<T: Hashable>(of: T.Type) -> [T] {
+        if let set = self as? Set<T> {
+            return Array(set)
+        }
+        return [T]()
+    }
+}

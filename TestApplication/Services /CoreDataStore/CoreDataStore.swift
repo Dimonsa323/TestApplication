@@ -14,8 +14,7 @@ protocol CoreDataStoreProtocol {
     var context: NSManagedObjectContext { get }
     
     func saveContext ()
-    func fetchRequest() -> [Recipe]
-    
+    func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void))
 }
 
 // MARK: - Core Data stack
@@ -53,17 +52,16 @@ class CoreDataStore: CoreDataStoreProtocol {
             }
         }
     }
-    
-    func fetchRequest() -> [Recipe] {
-        let fetchRequest: NSFetchRequest<FavoriteRecipe> = FavoriteRecipe.fetchRequest()
-        
+//
+    func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void)) {
+        let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
+
         do {
             let objects = try context.fetch(fetchRequest)
-            return objects.map(Recipe.init)
+            
+            closure(objects)
         } catch let error {
             print(error)
         }
-        
-        return []
     }
 }

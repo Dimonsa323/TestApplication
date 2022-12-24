@@ -15,7 +15,6 @@ class ingredientsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        ingredientsImageView.showActivityIndicator()
     }
 }
 
@@ -23,6 +22,5 @@ extension ingredientsCell {
     func config(with recipe: Ingredients) {
         ingredientsImageView.fetchImage(from: recipe.image ?? "person.fill")
         nameLabel.text = recipe.text
-        self.ingredientsImageView.hideActivityIndicatorView()
     }
 }

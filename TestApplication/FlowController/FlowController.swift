@@ -16,7 +16,7 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
     private let tabBarVC: UITabBarController = UITabBarController()
     
     private lazy var recepiesScreen: UINavigationController = instantiateRecepiesVC()
-    private lazy var favoriteScreen: UINavigationController = instantiateFavoriteVC()
+    private lazy var favoriteScreen: UINavigationController = navigator.showFavoriteVC()
     private lazy var profileScreen: UINavigationController = instantiateProfileVC()
     
     private let navigator: NavigatorProtocol
@@ -60,16 +60,6 @@ private extension FlowController {
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(
             title: "Recipies", image: UIImage(named: "book"), selectedImage: UIImage(named: "book")
-        )
-        return navigator
-    }
-    
-    func instantiateFavoriteVC() -> UINavigationController {
-        let presenter = FavoritePresenter(navigator: navigator, networking: networking)
-        let vc = FavoriteVC(presenter: presenter)
-        let navigator = UINavigationController(rootViewController: vc)
-        vc.tabBarItem = UITabBarItem(
-            title: "Favorite", image: UIImage(named: "Heart 2"), selectedImage: UIImage(named: "Heart 2")
         )
         return navigator
     }

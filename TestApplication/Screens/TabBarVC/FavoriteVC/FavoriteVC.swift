@@ -27,9 +27,15 @@ class FavoriteVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         view.showActivityIndicator()
+        presenter.getInfo {
+            self.tableView.reloadData()
+            UIView.animate(withDuration: 2) {
+                self.tableView.layer.opacity = 1
+            }
+            view.hideActivityIndicatorView()
         }
     }
-
+}
 
 extension FavoriteVC {
     func setupUI() {
@@ -38,7 +44,7 @@ extension FavoriteVC {
     }
     
     func setupNavigationBar() {
-        title = "Favotire"
+        title = "Favorite"
         
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
@@ -59,10 +65,8 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: favoriteCell, for: indexPath) as! FavoriteCell
         let recepiesFood = presenter.modelRecipe[indexPath.row]
-        cell.config(with: recepiesFood.recipe)
+        cell.config(with: recepiesFood)
         
         return cell
     }
-    
-    
 }

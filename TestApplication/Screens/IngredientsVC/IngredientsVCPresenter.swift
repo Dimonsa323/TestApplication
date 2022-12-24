@@ -11,8 +11,7 @@ import UIKit
 protocol IngredientsVCPresenterProtocol {
     var detailedRecipe: Recipe { get }
     
-    func saveUserInDataBase(recipe: Recipe, closure: @escaping () -> ())
-    func fetchRequest(closure: @escaping () -> ())
+    func saveIngredientsInCoreData()
 }
 
 class IngredientsVCPresenter: IngredientsVCPresenterProtocol {
@@ -29,22 +28,22 @@ class IngredientsVCPresenter: IngredientsVCPresenterProtocol {
         self.coreData = coreData
     }
     
-    func saveUserInDataBase(recipe: Recipe, closure: @escaping () -> ()) {
-        let recipeDataBase = FavoriteRecipe(context: coreData.context)
+    func saveIngredientsInCoreData() {
+        let recipeCD = FavoriteRecipeCD(context: coreData.context)
+        recipeCD.label = detailedRecipe.label
+        recipeCD.image = detailedRecipe.image
+        recipeCD.totalTime = detailedRecipe.totalTime
+        recipeCD.totalWeight = detailedRecipe.totalWeight
+        recipeCD.calories = detailedRecipe.calories
+        recipeCD.source = detailedRecipe.source
         
-        recipeDataBase.image = recipe.image
-        recipeDataBase.label = recipe.label
-        recipeDataBase.source = recipe.source
-        recipeDataBase.source = recipe.source
+        detailedRecipe.ingredients.forEach { ingredient in
+            let dataBaseIngredient = IngredientCD(context: self.coreData.context)
+            dataBaseIngredient.text = ingredient.text
+            dataBaseIngredient.image = ingredient.image
+            recipeCD.addToIngredients(dataBaseIngredient)
+        }
         
         coreData.saveContext()
-        closure()
-    }
-    
-    func fetchRequest(closure: @escaping () -> ()) {
-        detailedRecipe = coreData.fetchRequest()
-        
-        closure()
     }
 }
-

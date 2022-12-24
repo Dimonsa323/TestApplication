@@ -11,19 +11,25 @@ class ImageView: UIImageView {
     
     func fetchImage(from url: String) {
         
+        showActivityIndicator()
+        
         guard let url = URL(string: url) else {
             image = UIImage(systemName: "person.fill")
+            hideActivityIndicatorView()
             return
         }
         
         if let cachedImage = getCachedImage(url: url) {
             image = cachedImage
+            hideActivityIndicatorView()
             return
         }
         
         NetworkingService.loadAsyncImage(url: url) { data, response  in
             DispatchQueue.main.async {
                 self.image = UIImage(data: data)
+                self.hideActivityIndicatorView()
+               
             }
             
             self.saveDataToCash(with: data, response: response)
