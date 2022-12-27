@@ -9,31 +9,37 @@ import Foundation
 import UIKit
 
 protocol FavoritePresenterProtocol {
-    var modelRecipe: [Hits] { get }
+    var modelRecipe: [Recipe] { get set }
     func getInfo(closure: () -> Void)
+    func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void)
 }
 
 class FavoritePresenter: FavoritePresenterProtocol {
     
     private let navigator: NavigatorProtocol
     private let networking: NetworkingServiceProtocol
-    private let cordata: CoreDataStore
-    var modelRecipe: [Hits] = []
+    private let coredata: CoreDataStore
+    var modelRecipe: [Recipe] = []
     
-    init(navigator: NavigatorProtocol, networking: NetworkingServiceProtocol, cordata: CoreDataStore) {
+    init(navigator: NavigatorProtocol, networking: NetworkingServiceProtocol, coredata: CoreDataStore) {
         self.navigator = navigator
         self.networking = networking
-        self.cordata = cordata
+        self.coredata = coredata
     }
     
     func getInfo(closure: () -> Void) {
-        cordata.fetchRequest{ recipies in
+        coredata.fetchRequest{ recipies in
             let likedRecipies = recipies.map(Recipe.init(recipe:))
-            let hits = likedRecipies.map { Hits(recipe: $0)}
-            self.modelRecipe = hits
+            //let hits = likedRecipies.map { Hits(recipe: $0)}
+            self.modelRecipe = likedRecipies
             closure()
         }
     }
+    
+    func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void) {
+        coredata.deleteRecipe(id: modelRecipe[indexPath.row].recipeID ?? UUID())
+        modelRecipe.remove(at: indexPath.row)
+        
+        closure()
+    }
 }
-
-

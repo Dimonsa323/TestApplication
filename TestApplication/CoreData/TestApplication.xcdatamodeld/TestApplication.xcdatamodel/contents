@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FavoriteRecipeCD" representedClassName="FavoriteRecipeCD" syncable="YES">
         <attribute name="calories" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" attributeType="String"/>
         <attribute name="label" attributeType="String"/>
         <attribute name="source" attributeType="String"/>

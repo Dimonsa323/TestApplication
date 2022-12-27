@@ -33,10 +33,10 @@ class IngredientsVC: UIViewController {
         imageView.layer.cornerRadius = 8
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        hidesBottomBarWhenPushed = true
-//    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hidesBottomBarWhenPushed = true
+    }
 }
 
 extension IngredientsVC {

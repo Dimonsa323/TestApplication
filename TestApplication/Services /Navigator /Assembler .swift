@@ -44,7 +44,7 @@ class Assembler {
     }
     
     func instantiateFavoriteVC(navigator: NavigatorProtocol) -> UINavigationController {
-        let presenter = FavoritePresenter(navigator: navigator, networking: networking, cordata: dataBase)
+        let presenter = FavoritePresenter(navigator: navigator, networking: networking, coredata: dataBase)
         let vc = FavoriteVC(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(

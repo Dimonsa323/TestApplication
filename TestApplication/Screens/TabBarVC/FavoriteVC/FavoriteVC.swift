@@ -11,7 +11,7 @@ class FavoriteVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let presenter: FavoritePresenterProtocol
+    private var presenter: FavoritePresenterProtocol
     private let favoriteCell: String = String(describing: FavoriteCell.self)
     
     init(presenter: FavoritePresenterProtocol) {
@@ -29,7 +29,7 @@ class FavoriteVC: UIViewController {
         view.showActivityIndicator()
         presenter.getInfo {
             self.tableView.reloadData()
-            UIView.animate(withDuration: 2) {
+            UIView.animate(withDuration: 1) {
                 self.tableView.layer.opacity = 1
             }
             view.hideActivityIndicatorView()
@@ -68,5 +68,23 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
         cell.config(with: recepiesFood)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, closure in
+            self.presenter.deleteUserInDataBase(indexPath: indexPath) {
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
+            closure(true)
+        }
+        
+        deleteAction.image = UIImage(systemName: "trash")!
+        deleteAction.backgroundColor = .systemRed
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = true
+        
+        return configuration
     }
 }

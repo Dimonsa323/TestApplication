@@ -25,11 +25,11 @@ class FavoriteCell: UITableViewCell {
 }
 
 extension FavoriteCell {
-    func config(with recipe: Hits) {
-        imageFavoriteView.fetchImage(from: recipe.recipe.image)
+    func config(with recipe: Recipe) {
+        imageFavoriteView.fetchImage(from: recipe.image)
 //        self.hideActivityIndicatorView()
-        nameLabel.text = recipe.recipe.label
-        infoLabel.text = recipe.recipe.source
-        authorLabel.text = recipe.recipe.source
+        nameLabel.text = recipe.label
+        infoLabel.text = recipe.source
+        authorLabel.text = recipe.source
     }
 }

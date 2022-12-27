@@ -15,6 +15,7 @@ protocol CoreDataStoreProtocol {
     
     func saveContext ()
     func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void))
+    func deleteRecipe(id: UUID) 
 }
 
 // MARK: - Core Data stack
@@ -60,6 +61,25 @@ class CoreDataStore: CoreDataStoreProtocol {
             let objects = try context.fetch(fetchRequest)
             
             closure(objects)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func deleteRecipe(id: UUID) {
+        let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        
+        let context = persistentContainer.viewContext
+        
+        do {
+            let recipes = try context.fetch(fetchRequest)
+            for recipe in recipes {
+                context.delete(recipe)
+                print("DELETE -----------------------------")
+            }
+            saveContext()
+            print("Delete")
         } catch let error {
             print(error)
         }
