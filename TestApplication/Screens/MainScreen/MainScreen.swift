@@ -13,6 +13,7 @@ class MainScreen: UIViewController {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var uiView: UIImageView!
     @IBOutlet weak var enterUIButton: UIButton!
     @IBOutlet weak var cookLabel: UILabel!
     @IBOutlet weak var textLabel: UILabel!
@@ -34,6 +35,7 @@ class MainScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        uiView.alpha = 0.5
         enterUIButton.layer.cornerRadius = 6
     }
 }

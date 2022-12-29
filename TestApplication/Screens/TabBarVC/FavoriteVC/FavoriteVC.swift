@@ -10,7 +10,6 @@ import UIKit
 class FavoriteVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     private var presenter: FavoritePresenterProtocol
     private let favoriteCell: String = String(describing: FavoriteCell.self)
     

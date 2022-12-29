@@ -23,8 +23,8 @@
                             <constraint firstAttribute="height" constant="40" id="FnL-Ga-pQZ"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJn-ZN-VrN">
-                        <rect key="frame" x="64" y="39" width="240" height="20.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJn-ZN-VrN">
+                        <rect key="frame" x="64" y="49" width="240" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="fJn-ZN-VrN" secondAttribute="trailing" constant="16" id="KRT-9W-tWV"/>
                     <constraint firstAttribute="bottom" secondItem="cQ6-lr-XEW" secondAttribute="bottom" constant="8" id="SKe-yT-BpS"/>
-                    <constraint firstAttribute="bottom" secondItem="fJn-ZN-VrN" secondAttribute="bottom" constant="27.670000000000002" id="map-iG-xr4"/>
+                    <constraint firstItem="fJn-ZN-VrN" firstAttribute="centerY" secondItem="cQ6-lr-XEW" secondAttribute="centerY" id="ehz-fo-fDS"/>
                     <constraint firstItem="cQ6-lr-XEW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rzC-EX-JfJ"/>
                     <constraint firstItem="fJn-ZN-VrN" firstAttribute="leading" secondItem="cQ6-lr-XEW" secondAttribute="trailing" constant="8" id="uAC-do-7FE"/>
                 </constraints>

@@ -14,6 +14,7 @@
                 <outlet property="cookLabel" destination="1G8-ve-iSH" id="1EH-UR-Hdx"/>
                 <outlet property="enterUIButton" destination="rGn-ob-nuj" id="qRd-Xw-jhA"/>
                 <outlet property="textLabel" destination="wtb-lo-fSp" id="MQn-xf-BIM"/>
+                <outlet property="uiView" destination="8CF-gV-Gu7" id="32V-OD-3TP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
