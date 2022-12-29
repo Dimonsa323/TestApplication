@@ -6,6 +6,7 @@
 //
 
 import UIKit
+// fggfgfgfhghghghghghgh
 
 class IngredientsVC: UIViewController {
     
@@ -15,8 +16,9 @@ class IngredientsVC: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    private let presenter: IngredientsVCPresenterProtocol
+    private var presenter: IngredientsVCPresenterProtocol
     private let ingredientCell: String = String(describing: ingredientsCell.self)
+    
     
     init(presenter: IngredientsVCPresenterProtocol) {
         self.presenter = presenter
@@ -35,7 +37,7 @@ class IngredientsVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        hidesBottomBarWhenPushed = true
+        //self.tabBarController?.tabBar.isHidden = true
     }
 }
 
@@ -71,12 +73,16 @@ extension IngredientsVC {
     }
     
     func setupNavBar() {
-        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Vector"), style: .plain, target: self, action: #selector(didTapUser))
+        let image = UIImage(named: presenter.isFavorite ? "icon_favourite_fill" : "icon_favourite_dont_fill")
+        
+        let rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(didTapUser))
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     @objc
     func didTapUser() {
+        presenter.isFavorite.toggle()
+        setupNavBar()
         presenter.saveIngredientsInCoreData()
     }
 }

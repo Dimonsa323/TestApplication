@@ -11,7 +11,7 @@ import UIKit
 class Assembler {
     
     private let networking = NetworkingService()
-    private let dataBase = CoreDataStore() 
+    private let dataBase = CoreDataStore()
     
     func createMainScreen(navigator: NavigatorProtocol) -> UIViewController {
         
@@ -26,7 +26,7 @@ class Assembler {
         let presenter = DetailedRecipiesPresenter(navigator: navigator, networking: networking, type: type)
         let vc = DeteiledRecipiesScreen(presenter: presenter)
         
-        return vc 
+        return vc
     }
     
     func showFlowController(navigator: NavigatorProtocol) -> UIViewController {

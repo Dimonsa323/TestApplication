@@ -18,7 +18,6 @@
 		14AA822A293BCEB60044164E /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA8229293BCEB60044164E /* ProfilePresenter.swift */; };
 		14AA822C293BCEC60044164E /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA822B293BCEC60044164E /* FavoritePresenter.swift */; };
 		14AA822F293BDB0F0044164E /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA822E293BDB0F0044164E /* ImageView.swift */; };
-		14BDA79F2956E7A80077F5F5 /* EnumImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDA79E2956E7A80077F5F5 /* EnumImage.swift */; };
 		14BDA7B42959F12B0077F5F5 /* IngredientCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDA7B02959F12B0077F5F5 /* IngredientCD+CoreDataClass.swift */; };
 		14BDA7B52959F12B0077F5F5 /* IngredientCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDA7B12959F12B0077F5F5 /* IngredientCD+CoreDataProperties.swift */; };
 		14BDA7B62959F12B0077F5F5 /* FavoriteRecipeCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDA7B22959F12B0077F5F5 /* FavoriteRecipeCD+CoreDataClass.swift */; };
@@ -68,7 +67,6 @@
 		14AA8229293BCEB60044164E /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		14AA822B293BCEC60044164E /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		14AA822E293BDB0F0044164E /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		14BDA79E2956E7A80077F5F5 /* EnumImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumImage.swift; sourceTree = "<group>"; };
 		14BDA7B02959F12B0077F5F5 /* IngredientCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		14BDA7B12959F12B0077F5F5 /* IngredientCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IngredientCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		14BDA7B22959F12B0077F5F5 /* FavoriteRecipeCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteRecipeCD+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 			children = (
 				14D0EB12291D44BE00C8A435 /* ModelMenu.swift */,
 				14D0EB2729253FCE00C8A435 /* MenuActions.swift */,
-				14BDA79E2956E7A80077F5F5 /* EnumImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,7 +468,6 @@
 				14BDA7B72959F12B0077F5F5 /* FavoriteRecipeCD+CoreDataProperties.swift in Sources */,
 				14DDF8EE291C1CED002F7A87 /* MainScreen.swift in Sources */,
 				14DDF8D2291BFA5C002F7A87 /* TestApplication.xcdatamodeld in Sources */,
-				14BDA79F2956E7A80077F5F5 /* EnumImage.swift in Sources */,
 				14DDF8E7291C07AE002F7A87 /* Assembler .swift in Sources */,
 				14BDA7B52959F12B0077F5F5 /* IngredientCD+CoreDataProperties.swift in Sources */,
 				14D0EB13291D44BE00C8A435 /* ModelMenu.swift in Sources */,

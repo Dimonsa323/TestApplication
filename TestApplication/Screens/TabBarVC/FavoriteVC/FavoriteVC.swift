@@ -26,6 +26,9 @@ class FavoriteVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         view.showActivityIndicator()
         presenter.getInfo {
             self.tableView.reloadData()

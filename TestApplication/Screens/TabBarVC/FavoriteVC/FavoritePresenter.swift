@@ -30,7 +30,6 @@ class FavoritePresenter: FavoritePresenterProtocol {
     func getInfo(closure: () -> Void) {
         coredata.fetchRequest{ recipies in
             let likedRecipies = recipies.map(Recipe.init(recipe:))
-            //let hits = likedRecipies.map { Hits(recipe: $0)}
             self.modelRecipe = likedRecipies
             closure()
         }

@@ -15,7 +15,9 @@ protocol CoreDataStoreProtocol {
     
     func saveContext ()
     func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void))
-    func deleteRecipe(id: UUID) 
+    func deleteRecipe(id: UUID)
+    func fetchRequestIfConsistElement(with label: String) -> Bool
+    func deleteRecipe(with label: String)
 }
 
 // MARK: - Core Data stack
@@ -53,6 +55,23 @@ class CoreDataStore: CoreDataStoreProtocol {
             }
         }
     }
+
+    func fetchRequestIfConsistElement(with label: String) -> Bool {
+        
+        let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "label == %@", label as CVarArg)
+        fetchRequest.fetchLimit = 1
+
+        do {
+            let count = try context.fetch(fetchRequest).count
+
+            return count > 0
+        } catch let error {
+            print(error)
+        }
+
+        return false
+    }
 //
     func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void)) {
         let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
@@ -65,13 +84,32 @@ class CoreDataStore: CoreDataStoreProtocol {
             print(error)
         }
     }
-    
+
+    func deleteRecipe(with label: String) {
+        let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "label == %@", label as CVarArg)
+
+        let context = persistentContainer.viewContext
+
+        do {
+            let recipes = try context.fetch(fetchRequest)
+            for recipe in recipes {
+                context.delete(recipe)
+                print("DELETE -----------------------------")
+            }
+            saveContext()
+            print("Delete")
+        } catch let error {
+            print(error)
+        }
+    }
+
     func deleteRecipe(id: UUID) {
         let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        
+
         let context = persistentContainer.viewContext
-        
+
         do {
             let recipes = try context.fetch(fetchRequest)
             for recipe in recipes {
