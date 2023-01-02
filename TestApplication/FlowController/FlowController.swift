@@ -21,6 +21,7 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
     
     private let navigator: NavigatorProtocol
     private let networking: NetworkingServiceProtocol
+    private let isFavorite: Bool = false
     
     // MARK: - Init
     
@@ -59,7 +60,7 @@ private extension FlowController {
         let vc = RecepiesScreen(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(
-            title: "Recipies", image: UIImage(named: "book"), selectedImage: UIImage(named: "book")
+            title: "Recipies", image: UIImage(named: "bookWhite"), selectedImage: UIImage(named: "bookPurple")
         )
         return navigator
     }
@@ -69,7 +70,7 @@ private extension FlowController {
         let vc = ProfileVC(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(
-            title: "Profile", image: UIImage(named: "Profile 1"), selectedImage: UIImage(named: "Profile 1")
+            title: "Profile", image: UIImage(named: "Profile 1"), selectedImage: UIImage(named: "profilePurple")
         )
         return navigator
     }

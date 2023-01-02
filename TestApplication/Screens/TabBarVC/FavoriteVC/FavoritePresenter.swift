@@ -12,6 +12,7 @@ protocol FavoritePresenterProtocol {
     var modelRecipe: [Recipe] { get set }
     func getInfo(closure: () -> Void)
     func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void)
+    func pushFullRecipe(indexPath: IndexPath, view: UIViewController)
 }
 
 class FavoritePresenter: FavoritePresenterProtocol {
@@ -40,5 +41,10 @@ class FavoritePresenter: FavoritePresenterProtocol {
         modelRecipe.remove(at: indexPath.row)
         
         closure()
+    }
+    
+    func pushFullRecipe(indexPath: IndexPath, view: UIViewController) {
+        let fullIngredients = modelRecipe[indexPath.row]
+        navigator.fullRecipeVC(view: view, detailedType: fullIngredients)
     }
 }

@@ -14,6 +14,7 @@ protocol NavigatorProtocol {
     func showTabBar(view: UIViewController)
     func showIngredientsVC(view: UIViewController, detailedType: Recipe)
     func showFavoriteVC() -> UINavigationController
+    func fullRecipeVC(view: UIViewController, detailedType: Recipe)
 }
 
 class Navigator: NavigatorProtocol {
@@ -48,5 +49,10 @@ class Navigator: NavigatorProtocol {
         let vc = assembler.instantiateFavoriteVC(navigator: self)
         
         return vc
+    }
+    
+    func fullRecipeVC(view: UIViewController, detailedType: Recipe) {
+        let vc = assembler.goToFullRecipeVC(navigator: self, detailedRecipe: detailedType)
+        view.navigationController?.pushViewController(vc, animated: true)
     }
 }

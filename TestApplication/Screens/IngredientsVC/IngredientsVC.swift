@@ -37,7 +37,6 @@ class IngredientsVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //self.tabBarController?.tabBar.isHidden = true
     }
 }
 
@@ -73,7 +72,7 @@ extension IngredientsVC {
     }
     
     func setupNavBar() {
-        let image = UIImage(named: presenter.isFavorite ? "icon_favourite_fill" : "icon_favourite_dont_fill")
+        let image = UIImage(named: presenter.isFavorite ? "icon_favourite_dont_fill" : "icon_favourite_fill")
         
         let rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(didTapUser))
         navigationItem.rightBarButtonItem = rightBarButtonItem

@@ -48,8 +48,15 @@ class Assembler {
         let vc = FavoriteVC(presenter: presenter)
         let navigator = UINavigationController(rootViewController: vc)
         vc.tabBarItem = UITabBarItem(
-            title: "Favorite", image: UIImage(named: "Heart 2"), selectedImage: UIImage(named: "Heart 2")
+            title: "Favorite", image: UIImage(named: "icon_favourite_fill"), selectedImage: UIImage(named: "icon_favourite_dont_fill")
         )
         return navigator
+    }
+    
+    func goToFullRecipeVC(navigator: NavigatorProtocol, detailedRecipe: Recipe) -> UIViewController {
+        let presenter = IngredientsVCPresenter(navigator: navigator, networking: networking, detailedRecipe: detailedRecipe, coreData: dataBase)
+        let vc = IngredientsVC(presenter: presenter)
+        
+        return vc
     }
 }
