@@ -25,6 +25,7 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         imageProfile.layer.cornerRadius = 16
         downloadButton.layer.cornerRadius = 6
     }

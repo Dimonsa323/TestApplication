@@ -98,7 +98,7 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nj6-Jl-o8a">
                             <rect key="frame" x="0.0" y="28.333333333333318" width="358" height="50.333333333333343"/>
-                            <string key="text">Linkedin:                                                                                  nEmail:                                                                        nGithub:</string>
+                            <string key="text">Linkedin:                                                                                  nEmail:                                                                        nGithub: </string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" name="textColor"/>
                             <nil key="highlightedColor"/>

@@ -2,7 +2,7 @@
 //  FavoriteRecipeCD+CoreDataProperties.swift
 //  TestApplication
 //
-//  Created by Дима Губеня on 26.12.2022.
+//  Created by Дима Губеня on 02.01.2023.
 //
 //
 
@@ -23,6 +23,7 @@ extension FavoriteRecipeCD {
     @NSManaged public var source: String?
     @NSManaged public var totalTime: Double
     @NSManaged public var totalWeight: Double
+    @NSManaged public var url: String?
     @NSManaged public var ingredients: NSSet?
 
 }

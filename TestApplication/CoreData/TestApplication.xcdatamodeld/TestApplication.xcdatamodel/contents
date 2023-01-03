@@ -8,6 +8,7 @@
         <attribute name="source" attributeType="String"/>
         <attribute name="totalTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="totalWeight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="url" attributeType="String"/>
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IngredientCD"/>
     </entity>
     <entity name="IngredientCD" representedClassName="IngredientCD" syncable="YES">

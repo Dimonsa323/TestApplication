@@ -41,6 +41,7 @@ final class FlowController: UIViewController, UITabBarControllerDelegate {
         super.viewDidLoad()
         initialSetup()
         setUIAppearanceCustomNavBar(type: .opaque)
+        TabBarAppearance.shared.setAppearance()
         setupVCs()
     }
 }

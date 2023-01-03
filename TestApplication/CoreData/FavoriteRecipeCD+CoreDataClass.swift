@@ -2,7 +2,7 @@
 //  FavoriteRecipeCD+CoreDataClass.swift
 //  TestApplication
 //
-//  Created by Дима Губеня on 26.12.2022.
+//  Created by Дима Губеня on 02.01.2023.
 //
 //
 
