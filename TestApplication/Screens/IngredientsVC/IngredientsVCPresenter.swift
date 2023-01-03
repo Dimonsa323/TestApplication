@@ -51,6 +51,7 @@ class IngredientsVCPresenter: IngredientsVCPresenterProtocol {
         recipeCD.totalWeight = detailedRecipe.totalWeight
         recipeCD.calories = detailedRecipe.calories
         recipeCD.source = detailedRecipe.source
+        recipeCD.url = detailedRecipe.url
         
         detailedRecipe.ingredients.forEach { ingredient in
             let dataBaseIngredient = IngredientCD(context: self.coreData.context)
