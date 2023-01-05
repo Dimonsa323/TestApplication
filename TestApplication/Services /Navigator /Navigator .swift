@@ -15,6 +15,8 @@ protocol NavigatorProtocol {
     func showIngredientsVC(view: UIViewController, detailedType: Recipe)
     func showFavoriteVC() -> UINavigationController
     func fullRecipeVC(view: UIViewController, detailedType: Recipe)
+    func showWebView(view: UIViewController, url: String)
+    func showAnimationVC(view: UIViewController)
 }
 
 class Navigator: NavigatorProtocol {
@@ -53,6 +55,17 @@ class Navigator: NavigatorProtocol {
     
     func fullRecipeVC(view: UIViewController, detailedType: Recipe) {
         let vc = assembler.goToFullRecipeVC(navigator: self, detailedRecipe: detailedType)
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showWebView(view: UIViewController, url: String) {
+        let vc = assembler.webViewRecipe(url: url)
+        view.hidesBottomBarWhenPushed = true
+        view.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showAnimationVC(view: UIViewController) {
+        let vc = assembler.animationView()
         view.navigationController?.pushViewController(vc, animated: true)
     }
 }

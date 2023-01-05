@@ -59,4 +59,16 @@ class Assembler {
         
         return vc
     }
+    
+    func webViewRecipe(url: String) -> UIViewController {
+        let vc = WebViewVC(url: url)
+        
+        return vc 
+    }
+    
+    func animationView() -> UIViewController {
+        let vc = AnimationVC()
+        
+        return vc 
+    }
 }

@@ -14,7 +14,7 @@ protocol CoreDataStoreProtocol {
     var context: NSManagedObjectContext { get }
     
     func saveContext ()
-    func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void))
+    func fetchRequest(closure: @escaping (([FavoriteRecipeCD]) -> Void))
     func deleteRecipe(id: UUID)
     func fetchRequestIfConsistElement(with label: String) -> Bool
     func deleteRecipe(with label: String)
@@ -73,13 +73,15 @@ class CoreDataStore: CoreDataStoreProtocol {
         return false
     }
 //
-    func fetchRequest(closure: (([FavoriteRecipeCD]) -> Void)) {
+    func fetchRequest(closure: @escaping (([FavoriteRecipeCD]) -> Void)) {
         let fetchRequest: NSFetchRequest<FavoriteRecipeCD> = FavoriteRecipeCD.fetchRequest()
 
         do {
             let objects = try context.fetch(fetchRequest)
             
-            closure(objects)
+            DispatchQueue.main.async {
+                closure(objects)
+            }
         } catch let error {
             print(error)
         }

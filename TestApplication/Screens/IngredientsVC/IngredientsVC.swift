@@ -6,7 +6,6 @@
 //
 
 import UIKit
-// fggfgfgfhghghghghghgh
 
 class IngredientsVC: UIViewController {
     
@@ -106,6 +105,8 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
         titleButton.setTitleColor(.black, for: .normal)
         titleButton.setTitle("Full Recipe", for: .normal)
         titleButton.layer.cornerRadius = 6
+        titleButton.addTarget(self, action: #selector(touchUpFullRecupe), for: .touchUpInside)
+        
         
         return titleButton
     }
@@ -130,5 +131,13 @@ extension IngredientsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 32
+    }
+}
+
+extension IngredientsVC {
+    
+    @objc
+    private func touchUpFullRecupe() {
+        presenter.showWebViewVC(view: self)
     }
 }

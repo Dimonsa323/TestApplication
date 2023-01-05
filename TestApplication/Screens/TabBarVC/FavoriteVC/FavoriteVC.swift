@@ -34,7 +34,7 @@ class FavoriteVC: UIViewController {
             UIView.animate(withDuration: 1) {
                 self.tableView.layer.opacity = 1
             }
-            view.hideActivityIndicatorView()
+            self.view.hideActivityIndicatorView()
         }
     }
 }
@@ -93,4 +93,6 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
         
         return configuration
     }
+    
+    
 }

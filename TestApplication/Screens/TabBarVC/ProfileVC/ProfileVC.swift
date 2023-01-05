@@ -33,4 +33,7 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC {
     
+    @IBAction func showAnimationButtoт() {
+        presenter.showAnimationView(view: self)
+    }
 }

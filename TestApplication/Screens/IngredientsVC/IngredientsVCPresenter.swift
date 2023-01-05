@@ -14,6 +14,7 @@ protocol IngredientsVCPresenterProtocol {
     
     func saveIngredientsInCoreData()
     func checkIfElementInCD()
+    func showWebViewVC(view: UIViewController)
 }
 
 class IngredientsVCPresenter: IngredientsVCPresenterProtocol {
@@ -61,6 +62,10 @@ class IngredientsVCPresenter: IngredientsVCPresenterProtocol {
         }
         
         coreData.saveContext()
+    }
+    
+    func showWebViewVC(view: UIViewController) {
+        navigator.showWebView(view: view, url: detailedRecipe.url)
     }
 }
 

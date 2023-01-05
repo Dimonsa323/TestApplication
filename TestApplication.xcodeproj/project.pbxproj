@@ -44,6 +44,12 @@
 		14D0EB502933EBB800C8A435 /* ingredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB4E2933EBB800C8A435 /* ingredientsCell.swift */; };
 		14D0EB512933EBB800C8A435 /* ingredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D0EB4F2933EBB800C8A435 /* ingredientsCell.xib */; };
 		14D0EB5329365BCA00C8A435 /* NavBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0EB5229365BCA00C8A435 /* NavBarAppearance.swift */; };
+		14D757DF2964693300B008E9 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D757DD2964693300B008E9 /* WebViewVC.swift */; };
+		14D757E02964693300B008E9 /* WebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D757DE2964693300B008E9 /* WebViewVC.xib */; };
+		14D757E82965F7B400B008E9 /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D757E62965F7B400B008E9 /* AnimationVC.swift */; };
+		14D757E92965F7B400B008E9 /* AnimationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D757E72965F7B400B008E9 /* AnimationVC.xib */; };
+		14D757EB29660BF100B008E9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D757EA29660BF100B008E9 /* Video.swift */; };
+		14D757ED296611E300B008E9 /* Food.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 14D757EC296611E300B008E9 /* Food.mp4 */; };
 		14DDF8C8291BFA5C002F7A87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF8C7291BFA5C002F7A87 /* AppDelegate.swift */; };
 		14DDF8CA291BFA5C002F7A87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF8C9291BFA5C002F7A87 /* SceneDelegate.swift */; };
 		14DDF8D2291BFA5C002F7A87 /* TestApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14DDF8D0291BFA5C002F7A87 /* TestApplication.xcdatamodeld */; };
@@ -95,6 +101,12 @@
 		14D0EB4E2933EBB800C8A435 /* ingredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ingredientsCell.swift; sourceTree = "<group>"; };
 		14D0EB4F2933EBB800C8A435 /* ingredientsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ingredientsCell.xib; sourceTree = "<group>"; };
 		14D0EB5229365BCA00C8A435 /* NavBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarAppearance.swift; sourceTree = "<group>"; };
+		14D757DD2964693300B008E9 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		14D757DE2964693300B008E9 /* WebViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewVC.xib; sourceTree = "<group>"; };
+		14D757E62965F7B400B008E9 /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
+		14D757E72965F7B400B008E9 /* AnimationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimationVC.xib; sourceTree = "<group>"; };
+		14D757EA29660BF100B008E9 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		14D757EC296611E300B008E9 /* Food.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Food.mp4; path = ../../../Food.mp4; sourceTree = "<group>"; };
 		14DDF8C4291BFA5C002F7A87 /* TestApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DDF8C7291BFA5C002F7A87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DDF8C9291BFA5C002F7A87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +133,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		146F51DF2964686A0042EB21 /* WebViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				14D757DD2964693300B008E9 /* WebViewVC.swift */,
+				14D757DE2964693300B008E9 /* WebViewVC.xib */,
+			);
+			path = WebViewVC;
+			sourceTree = "<group>";
+		};
 		1498D5EC293DF49B00CD7344 /* FavoriteCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +203,7 @@
 			children = (
 				14D0EB12291D44BE00C8A435 /* ModelMenu.swift */,
 				14D0EB2729253FCE00C8A435 /* MenuActions.swift */,
+				14D757EA29660BF100B008E9 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +287,15 @@
 			path = "IngredientsCell ";
 			sourceTree = "<group>";
 		};
+		14D757E12965F6C900B008E9 /* AnimationVC */ = {
+			isa = PBXGroup;
+			children = (
+				14D757E62965F7B400B008E9 /* AnimationVC.swift */,
+				14D757E72965F7B400B008E9 /* AnimationVC.xib */,
+			);
+			path = AnimationVC;
+			sourceTree = "<group>";
+		};
 		14DDF8BB291BFA5C002F7A87 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +342,7 @@
 		14DDF8DF291BFBB2002F7A87 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				14D757EC296611E300B008E9 /* Food.mp4 */,
 				14DDF8D3291BFA5D002F7A87 /* Assets.xcassets */,
 			);
 			path = Source;
@@ -339,6 +371,8 @@
 		14DDF8E2291C0715002F7A87 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				14D757E12965F6C900B008E9 /* AnimationVC */,
+				146F51DF2964686A0042EB21 /* WebViewVC */,
 				14AA821E293BCE0D0044164E /* TabBarVC */,
 				14D0EB452933D9DC00C8A435 /* IngredientsVC */,
 				14D0EB362928E5ED00C8A435 /* DetailedRecipies */,
@@ -446,6 +480,7 @@
 				14DDF8D7291BFA5D002F7A87 /* LaunchScreen.storyboard in Resources */,
 				14DDF8D4291BFA5D002F7A87 /* Assets.xcassets in Resources */,
 				14DDF8EF291C1CED002F7A87 /* MainScreen.xib in Resources */,
+				14D757E92965F7B400B008E9 /* AnimationVC.xib in Resources */,
 				14D0EB322925714200C8A435 /* RecipiesCell.xib in Resources */,
 				14AA8224293BCE7D0044164E /* ProfileVC.xib in Resources */,
 				1498D5F0293DF4BB00CD7344 /* FavoriteCell.xib in Resources */,
@@ -454,7 +489,9 @@
 				14AA8228293BCE9B0044164E /* FavoriteVC.xib in Resources */,
 				14D0EB3A2928E69700C8A435 /* DeteiledRecipiesScreen.xib in Resources */,
 				14D0EB412928E8C300C8A435 /* DeteiledRecipiesCell.xib in Resources */,
+				14D757E02964693300B008E9 /* WebViewVC.xib in Resources */,
 				14D0EB492933DB3E00C8A435 /* IngredientsVC.xib in Resources */,
+				14D757ED296611E300B008E9 /* Food.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,12 +524,14 @@
 				14D0EB3C2928E6CD00C8A435 /* DetailedRecipiesPresenter.swift in Sources */,
 				14D0EB202921307600C8A435 /* UIViewController.swift in Sources */,
 				14D0EB482933DB3E00C8A435 /* IngredientsVC.swift in Sources */,
+				14D757EB29660BF100B008E9 /* Video.swift in Sources */,
 				14AA822F293BDB0F0044164E /* ImageView.swift in Sources */,
 				14D0EB5329365BCA00C8A435 /* NavBarAppearance.swift in Sources */,
 				14DDF8CA291BFA5C002F7A87 /* SceneDelegate.swift in Sources */,
 				14DDF8E9291C07B8002F7A87 /* Navigator .swift in Sources */,
 				14D0EB502933EBB800C8A435 /* ingredientsCell.swift in Sources */,
 				14AA8227293BCE9B0044164E /* FavoriteVC.swift in Sources */,
+				14D757DF2964693300B008E9 /* WebViewVC.swift in Sources */,
 				14AA822A293BCEB60044164E /* ProfilePresenter.swift in Sources */,
 				14D0EB2829253FCE00C8A435 /* MenuActions.swift in Sources */,
 				1498D5EF293DF4BB00CD7344 /* FavoriteCell.swift in Sources */,
@@ -501,6 +540,7 @@
 				146F51DD29644F500042EB21 /* ColorApp.swift in Sources */,
 				146F51D729637FB00042EB21 /* FavoriteRecipeCD+CoreDataProperties.swift in Sources */,
 				1477B0FA2938A6C6006A50C9 /* View+ActivityIndicator.swift in Sources */,
+				14D757E82965F7B400B008E9 /* AnimationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

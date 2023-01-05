@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Protocol Presenter
 
 protocol ProfilePresenterProtocol {
+    func showAnimationView(view: UIViewController)
     
 }
 
@@ -21,6 +22,13 @@ class ProfilePresenter: ProfilePresenterProtocol {
     
     init(navigator: NavigatorProtocol) {
         self.navigator = navigator
+    }
+}
+
+extension ProfilePresenter {
+    
+    func showAnimationView(view: UIViewController) {
+        navigator.showAnimationVC(view: view)
     }
 }
 

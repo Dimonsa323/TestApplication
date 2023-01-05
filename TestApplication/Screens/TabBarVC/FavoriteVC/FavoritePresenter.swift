@@ -10,7 +10,7 @@ import UIKit
 
 protocol FavoritePresenterProtocol {
     var modelRecipe: [Recipe] { get set }
-    func getInfo(closure: () -> Void)
+    func getInfo(closure: @escaping () -> Void)
     func deleteUserInDataBase(indexPath: IndexPath, closure: () -> Void)
     func pushFullRecipe(indexPath: IndexPath, view: UIViewController)
 }
@@ -28,7 +28,7 @@ class FavoritePresenter: FavoritePresenterProtocol {
         self.coredata = coredata
     }
     
-    func getInfo(closure: () -> Void) {
+    func getInfo(closure: @escaping () -> Void) {
         coredata.fetchRequest{ recipies in
             let likedRecipies = recipies.map(Recipe.init(recipe:))
             self.modelRecipe = likedRecipies
