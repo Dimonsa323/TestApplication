@@ -9,7 +9,10 @@ import UIKit
 
 class FavoriteVC: UIViewController {
     
+    @IBOutlet weak var isEmptyLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    
     private var presenter: FavoritePresenterProtocol
     private let favoriteCell: String = String(describing: FavoriteCell.self)
     
@@ -35,6 +38,9 @@ class FavoriteVC: UIViewController {
                 self.tableView.layer.opacity = 1
             }
             self.view.hideActivityIndicatorView()
+            
+//            if self.presenter.modelRecipe.isEmpty {
+            self.isEmptyLabel.isHidden = !self.presenter.modelRecipe.isEmpty
         }
     }
 }

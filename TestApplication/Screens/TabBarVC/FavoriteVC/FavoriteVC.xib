@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteVC" customModule="TestApplication" customModuleProvider="target">
             <connections>
+                <outlet property="isEmptyLabel" destination="s1a-9E-9Q5" id="gEB-45-53N"/>
                 <outlet property="tableView" destination="hha-g8-sD0" id="tPc-Zm-xme"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

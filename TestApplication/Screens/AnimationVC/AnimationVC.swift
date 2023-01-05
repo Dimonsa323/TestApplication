@@ -11,18 +11,8 @@ import AVKit
 
 class AnimationVC: UIViewController {
     
-//    let videoURL = URL(string: "https://www.youtube.com/watch?v=yM_W6Hq5r6c")
-//    let player = AVPlayer(url: videoURL!)
-//    let playerViewController = AVPlayerViewController()
-//    playerViewController.player = player
-//    self.present(playerViewController, animated: true) {
-//        playerViewController.player!.play()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,5 +27,10 @@ class AnimationVC: UIViewController {
         player.volume = 0
         player.play()
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
     }
 }
